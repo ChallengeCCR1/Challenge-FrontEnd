@@ -143,4 +143,4 @@ Permite o cadastro de novos usuários com dados como nome, e-mail e senha.
 
 API Login de Usuário (POST)
 URL: http://localhost:8080/api/usuario/login
-Autentica usuários para acesso ao sistema validando credenciais.
+Autentica usuários para acesso ao sistema validando credenciais"!
