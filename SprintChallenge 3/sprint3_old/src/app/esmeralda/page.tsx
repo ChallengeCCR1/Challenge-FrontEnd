@@ -42,6 +42,8 @@ const Esmeralda = () => {
   const [showMapa, setShowMapa] = useState(false);
   const [trainIndex, setTrainIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const [showMessage, setShowMessage] = useState(false); // Estado para a mensagem "Em breve"
+  const [isViagemDisabled, setIsViagemDisabled] = useState(false); // Estado para desabilitar o botão "Começar Viagem"
 
   const toggleStation = (station: string) => {
     setExpandedStation(expandedStation === station ? null : station);
@@ -56,6 +58,17 @@ const Esmeralda = () => {
 
   const currentTrainIndex = hoverIndex !== null ? hoverIndex : trainIndex;
 
+  const handleViagemClick = () => {
+    // Desabilita o botão "Começar Viagem" e exibe a mensagem "Em breve"
+    setIsViagemDisabled(true);
+    setShowMessage(true);
+    
+    // Esconde a mensagem após 3 segundos
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  };
+
   return (
     <main className="text-center px-4 pt-10 pb-28 max-w-md mx-auto relative bg-white min-h-screen">
       <header>
@@ -66,21 +79,25 @@ const Esmeralda = () => {
 
       <section className="mt-8 space-y-3">
         {[ 
-          { label: "Previsão Pico", href: "/HorarioPico", icon: <FaClock /> },
-          { label: "Começar Viagem", href: "/ViagemInicio", icon: <FaRoute /> },
-          { label: "Ver Relatório de viagem", href: "/Relatorio", icon: <FaBus /> },
-          { label: "Mapa Linha", href: "/mapaLinha", icon: <FaMapMarkedAlt /> }
+          { label: "Previsão Pico", href: "/HorarioPico", icon: <FaClock />, disabled: false },
+          { label: "Ver Relatório de viagem", href: "/Relatorio", icon: <FaBus />, disabled: false },
+          { label: "Mapa Linha", href: "/mapaLinha", icon: <FaMapMarkedAlt />, disabled: false },
+          { label: "Começar Viagem", href: "#", icon: <FaRoute />, disabled: isViagemDisabled } // Botão "Começar Viagem" desativado
         ].map((btn, idx) => (
-          <Link key={idx} href={btn.href}>
-            <motion.button
-              className="bg-[#42807D] hover:bg-[#5db6ab] text-white w-full py-4 rounded-[9px] text-sm font-medium flex items-center justify-center gap-2 mt-5 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              {btn.icon}
-              {btn.label}
-            </motion.button>
-          </Link>
+          <div key={idx} className="mt-5">
+            <Link href={btn.disabled ? "#" : btn.href}>
+              <motion.button
+                className={`bg-[#42807D] ${btn.disabled ? "cursor-not-allowed opacity-50" : "hover:bg-[#5db6ab]"} text-white w-full py-4 rounded-[9px] text-sm font-medium flex items-center justify-center gap-2 transition-colors`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                onClick={btn.label === "Começar Viagem" ? handleViagemClick : undefined} // Chama a função handleViagemClick ao clicar no botão "Começar Viagem"
+                disabled={btn.disabled}
+              >
+                {btn.icon}
+                {btn.label}
+              </motion.button>
+            </Link>
+          </div>
         ))}
       </section>
 
@@ -116,7 +133,6 @@ const Esmeralda = () => {
                 ) : (
                   estacao.nome
                 )}
-
                 {hoverIndex === i && (
                   <div className="absolute top-[-28px] left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded shadow text-xs text-gray-800 z-50">
                     {estacao.nome}
@@ -159,6 +175,17 @@ const Esmeralda = () => {
           >
             <FaTrain className="text-[#42807D] text-xl" />
           </motion.div>
+        </motion.div>
+      )}
+
+      {/* Mensagem de "Em breve" */}
+      {showMessage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white px-6 py-4 rounded-lg shadow-lg z-50"
+        >
+          <p>Em breve!</p>
         </motion.div>
       )}
 

@@ -9,6 +9,7 @@ interface Usuario {
 }
 
 interface Estacao {
+  id: number;
   nome: string;
   linha?: string;
 }
@@ -17,35 +18,13 @@ const ViagemInicio = () => {
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [estacoesAPI, setEstacoesAPI] = useState<Estacao[]>([]);
   const [usuarioId, setUsuarioId] = useState('1');
-  const [origem, setOrigem] = useState('');
-  const [destino, setDestino] = useState('');
+  const [origemId, setOrigemId] = useState('');
+  const [destinoId, setDestinoId] = useState('');
   const [hpartida, setHpartida] = useState('');
   const [erro, setErro] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
- const estacoesLinha9Corretas: Estacao[] = [
-  { nome: 'Osasco' },
-  { nome: 'Presidente Altino' },
-  { nome: 'Ceasa' },
-  { nome: 'Villa-Lobos–Jaguaré' },
-  { nome: 'Cidade Universitária' },
-  { nome: 'Pinheiros' },
-  { nome: 'Hebraica–Rebouças' },
-  { nome: 'Cidade Jardim' },
-  { nome: 'Vila Olímpia' },
-  { nome: 'Berrini' },
-  { nome: 'Morumbi' },
-  { nome: 'Granja Julieta' },
-  { nome: 'Santo Amaro' },
-  { nome: 'Socorro' },
-  { nome: 'Jurubatuba–Senac' }, 
-  { nome: 'Autódromo' },
-  { nome: 'Primavera–Interlagos' },
-  { nome: 'Grajaú' },
-  { nome: 'Bruno Covas–Mendes–Vila Natal' },
-  { nome: 'Varginha' },
-];
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -80,12 +59,12 @@ const ViagemInicio = () => {
   }, []);
 
   const iniciarViagem = async () => {
-    if (!origem || !destino) {
+    if (!origemId || !destinoId) {
       setErro('Preencha todos os campos');
       return;
     }
 
-    if (origem === destino) {
+    if (origemId === destinoId) {
       setErro('A estação de origem não pode ser igual à de destino.');
       return;
     }
@@ -99,8 +78,8 @@ const ViagemInicio = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           usuarioId: parseInt(usuarioId),
-          estacaoOrigemNome: origem,
-          estacaoDestinoNome: destino,
+          estacaoOrigemId: parseInt(origemId),
+          estacaoDestinoId: parseInt(destinoId),
           hPartida: hpartida,
         }),
       });
@@ -119,9 +98,7 @@ const ViagemInicio = () => {
     }
   };
 
-  const estacoesLinha9 = estacoesAPI.length > 0
-    ? estacoesAPI.filter((estacao) => estacao.linha === '9 Esmeralda')
-    : estacoesLinha9Manual;
+  const estacoesLinha9 = estacoesAPI.filter((estacao) => estacao.linha === '9 Esmeralda');
 
   if (isLoading) {
     return (
@@ -140,13 +117,13 @@ const ViagemInicio = () => {
         <div>
           <label className="block mb-1">Estação de Origem</label>
           <select
-            value={origem}
-            onChange={(e) => setOrigem(e.target.value)}
+            value={origemId}
+            onChange={(e) => setOrigemId(e.target.value)}
             className="w-full p-2 border rounded"
           >
             <option value="">Selecione a origem</option>
             {estacoesLinha9.map((estacao) => (
-              <option key={estacao.nome} value={estacao.nome}>
+              <option key={estacao.id} value={estacao.id.toString()}>
                 {estacao.nome}
               </option>
             ))}
@@ -156,13 +133,13 @@ const ViagemInicio = () => {
         <div>
           <label className="block mb-1">Estação de Destino</label>
           <select
-            value={destino}
-            onChange={(e) => setDestino(e.target.value)}
+            value={destinoId}
+            onChange={(e) => setDestinoId(e.target.value)}
             className="w-full p-2 border rounded"
           >
             <option value="">Selecione o destino</option>
             {estacoesLinha9.map((estacao) => (
-              <option key={estacao.nome} value={estacao.nome}>
+              <option key={estacao.id} value={estacao.id.toString()}>
                 {estacao.nome}
               </option>
             ))}
