@@ -1,7 +1,6 @@
 'use client';
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaBus, FaClock, FaMapMarkedAlt, FaRoute } from "react-icons/fa";
 import { FaTrain } from "react-icons/fa6";
@@ -28,22 +27,13 @@ const estacoesLinha9 = [
   { nome: "Mendes-Vila Natal", ativa: false },
 ];
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05 },
-  }),
-};
-
 const Esmeralda = () => {
   const [expandedStation, setExpandedStation] = useState<string | null>(null);
   const [showMapa, setShowMapa] = useState(false);
   const [trainIndex, setTrainIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-  const [showMessage, setShowMessage] = useState(false); // Estado para a mensagem "Em breve"
-  const [isViagemDisabled, setIsViagemDisabled] = useState(false); // Estado para desabilitar o botão "Começar Viagem"
+  const [showMessage, setShowMessage] = useState(false);
+  const [isViagemDisabled, setIsViagemDisabled] = useState(false);
 
   const toggleStation = (station: string) => {
     setExpandedStation(expandedStation === station ? null : station);
@@ -59,11 +49,8 @@ const Esmeralda = () => {
   const currentTrainIndex = hoverIndex !== null ? hoverIndex : trainIndex;
 
   const handleViagemClick = () => {
-    // Desabilita o botão "Começar Viagem" e exibe a mensagem "Em breve"
     setIsViagemDisabled(true);
     setShowMessage(true);
-    
-    // Esconde a mensagem após 3 segundos
     setTimeout(() => {
       setShowMessage(false);
     }, 3000);
@@ -82,44 +69,42 @@ const Esmeralda = () => {
           { label: "Previsão Pico", href: "/HorarioPico", icon: <FaClock />, disabled: false },
           { label: "Ver Relatório de viagem", href: "/Relatorio", icon: <FaBus />, disabled: false },
           { label: "Mapa Linha", href: "/mapaLinha", icon: <FaMapMarkedAlt />, disabled: false },
-          { label: "Começar Viagem", href: "#", icon: <FaRoute />, disabled: isViagemDisabled } // Botão "Começar Viagem" desativado
+          { label: "Começar Viagem", href: "#", icon: <FaRoute />, disabled: isViagemDisabled }
         ].map((btn, idx) => (
           <div key={idx} className="mt-5">
             <Link href={btn.disabled ? "#" : btn.href}>
-              <motion.button
-                className={`bg-[#42807D] ${btn.disabled ? "cursor-not-allowed opacity-50" : "hover:bg-[#5db6ab]"} text-white w-full py-4 rounded-[9px] text-sm font-medium flex items-center justify-center gap-2 transition-colors`}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                onClick={btn.label === "Começar Viagem" ? handleViagemClick : undefined} // Chama a função handleViagemClick ao clicar no botão "Começar Viagem"
+              <button
+                className={`bg-[#42807D] ${btn.disabled ? "cursor-not-allowed opacity-50" : "hover:bg-[#5db6ab]"} text-white w-full py-4 rounded-[9px] text-sm font-medium flex items-center justify-center gap-2 transition-colors duration-300`}
+                onClick={btn.label === "Começar Viagem" ? handleViagemClick : undefined}
                 disabled={btn.disabled}
+                type="button"
               >
                 {btn.icon}
                 {btn.label}
-              </motion.button>
+              </button>
             </Link>
           </div>
         ))}
       </section>
 
-      <motion.button
-        className="bg-[#42807D] hover:bg-[#5db6ab] text-white w-full mt-8 py-4 rounded-[9px] text-sm font-medium"
+      <button
+        className="bg-[#42807D] hover:bg-[#5db6ab] text-white w-full mt-8 py-4 rounded-[9px] text-sm font-medium transition-colors duration-300"
         onClick={() => setShowMapa(!showMapa)}
-        whileHover={{ scale: 1.05 }}
+        type="button"
       >
         {showMapa ? "Fechar Mapa" : "Ver Mapa das Estações"}
-      </motion.button>
+      </button>
 
       {showMapa && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <div
           className="relative mt-6 w-full h-[600px] bg-[#eef7f6] rounded-lg overflow-hidden"
+          style={{ transition: "opacity 0.5s ease-in-out" }}
         >
           {estacoesLinha9.map((estacao, i) => {
             const top = 50 + i * 25;
             const left = i % 2 === 0 ? 40 : 200;
             return (
-              <motion.div
+              <div
                 key={estacao.nome}
                 className={`absolute text-xs px-3 py-2 rounded-full shadow-md z-10 ${estacao.ativa ? "bg-[#42807D] text-white cursor-pointer" : "bg-[#d6eae9] text-gray-600 cursor-default"}`}
                 style={{ top, left }}
@@ -138,7 +123,7 @@ const Esmeralda = () => {
                     {estacao.nome}
                   </div>
                 )}
-              </motion.div>
+              </div>
             );
           })}
 
@@ -164,40 +149,36 @@ const Esmeralda = () => {
             })}
           </svg>
 
-          <motion.div
+          <div
             className="absolute z-20"
-            initial={false}
-            animate={{
+            style={{
               top: `${50 + currentTrainIndex * 25}px`,
               left: `${currentTrainIndex % 2 === 0 ? 40 : 200}px`,
+              transition: "top 0.5s ease, left 0.5s ease"
             }}
-            transition={{ duration: 0.5 }}
           >
             <FaTrain className="text-[#42807D] text-xl" />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
 
-      {/* Mensagem de "Em breve" */}
       {showMessage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white px-6 py-4 rounded-lg shadow-lg z-50"
+          style={{ animation: "fadeIn 0.3s ease forwards" }}
         >
           <p>Em breve!</p>
-        </motion.div>
+        </div>
       )}
 
       <footer className="fixed bottom-4 left-0 w-full px-4">
         <Link href="/header">
-          <motion.button
-            className="bg-[#42807D] text-white w-[58%] py-4 rounded-[9px] text-base hover:bg-[#365d56]"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
+            className="bg-[#42807D] text-white w-[58%] py-4 rounded-[9px] text-base hover:bg-[#365d56] transition-colors duration-300"
+            type="button"
           >
             Voltar
-          </motion.button>
+          </button>
         </Link>
       </footer>
     </main>

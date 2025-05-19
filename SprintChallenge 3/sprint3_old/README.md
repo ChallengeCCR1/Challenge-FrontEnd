@@ -1,8 +1,7 @@
 🚆 Future Station: Sistema de Viagem e Gestão de Fluxo de Passageiros
 Bem-vindo ao repositório da Future Station! Este projeto tem como objetivo melhorar o fluxo de passageiros dentro das estações da CCR e fornecer uma experiência interativa e informativa para os usuários do sistema de transporte.
 
-Integrantes do Time:
-
+Integrantes do Time
 Matteus Viegas dos Santos - RM 561090
 
 Pedro Henrique de Souza Sena - RM 561178
@@ -14,104 +13,88 @@ Obrigado por visitar o nosso repositório!
 🚆 Objetivo do Projeto
 O Future Station oferece uma interface interativa de viagem para os usuários de transporte público, permitindo calcular e exibir os tempos estimados de viagem entre diferentes estações. Além disso, o sistema registra as viagens realizadas, apresenta relatórios detalhados de fluxo de passageiros, e permite interações com funcionalidades como avisos e sugestões.
 
-Funcionalidades Implementadas:
-Iniciar Viagem:
-
+Funcionalidades Implementadas
+1. Iniciar Viagem
 O usuário pode selecionar a estação de origem e destino.
 
 O sistema calcula o tempo estimado de viagem e exibe uma barra de progresso em tempo real, informando quanto falta para a chegada.
 
 Durante a viagem, o usuário vê o tempo restante e o percentual de viagem concluído.
 
-Relatório de Viagens:
+2. Relatório de Viagens
+Permite que o usuário visualize um histórico de suas viagens anteriores, com detalhes como estação de origem, destino, tempo de viagem e horário.
 
-O sistema permite que o usuário visualize um histórico de suas viagens anteriores, com detalhes como a estação de origem, destino, tempo de viagem, e hora da viagem.
+3. Horário de Pico e Fluxo de Passageiros
+Visualização do fluxo de passageiros nas estações, incluindo número de pessoas presentes e horários específicos.
 
-Horário de Pico e Fluxo de Passageiros:
+Análise de fluxo para diferentes horários do dia, ajudando o usuário a escolher os melhores momentos para viajar.
 
-A funcionalidade de Horário de Pico permite que o usuário visualize o fluxo de passageiros nas estações, incluindo o número de pessoas presentes e o horário específico.
+4. Mapa da Linha 9
+Mapa interativo com todas as estações da Linha 9, destacando a zona sul e o número de passageiros em cada estação.
 
-O sistema exibe uma análise de fluxo para diferentes horários do dia, ajudando o usuário a escolher os melhores momentos para viajar.
+Visão clara da distribuição do fluxo de passageiros nas estações da linha.
 
-Mapa da Linha 9:
+5. Sistema de Login e Cadastro
+Login com credenciais para acesso ao sistema.
 
-O mapa interativo da Linha 9 exibe todas as estações dessa linha, destacando a zona sul e o número de passageiros em cada estação.
+Visualização e edição do perfil, incluindo alteração da foto de perfil.
 
-O mapa fornece uma visão clara da distribuição do fluxo de passageiros nas diferentes estações da linha.
+6. Avisos e Sugestões Interativas
+Página dedicada a notícias importantes sobre mudanças nas linhas.
 
-Sistema de Login e Cadastro:
+Formulário para envio de feedback e sugestões dos usuários.
 
-O sistema de login permite que os usuários façam login com suas credenciais e visualizem seu perfil, incluindo a opção de alterar a foto de perfil.
+7. Perfil do Usuário
+Exibição de informações pessoais: nome, e-mail e foto.
 
-Avisos e Sugestões Interativas:
-
-Página de avisos para exibir notícias relacionadas a mudanças nas linhas de transporte.
-
-Um formulário de feedback para os usuários enviarem sugestões sobre o sistema.
-
-Perfil do Usuário:
-
-O perfil do usuário exibe informações como nome, e-mail e foto, permitindo também que o usuário altere sua foto de perfil e faça logout.
+Opção para alterar foto de perfil e fazer logout.
 
 🛠 Roadmap do Projeto
-Fase 1: Protótipos e Planejamento:
+Fase 1: Protótipos e Planejamento
 
-Criamos wireframes e mockups no Figma.
+Criação de wireframes e mockups no Figma.
 
-Definimos a paleta de cores, tipografia e layout do projeto.
+Definição da paleta de cores, tipografia e layout.
 
-Fase 2: Desenvolvimento da Estrutura Básica:
+Fase 2: Desenvolvimento da Estrutura Básica
 
 Implementação inicial com HTML e CSS.
 
 Configuração da navegação e layout responsivo.
 
-Fase 3: Implementação com Next.js e TypeScript:
+Fase 3: Implementação com Next.js e TypeScript
 
-Migração para Next.js e integração com TypeScript.
+Migração para Next.js com TypeScript.
 
-Implementação de funcionalidades principais, como login e cadastro de usuários.
-
-Criação das funcionalidades de viagem, relatórios e fluxo de passageiros.
+Desenvolvimento das funcionalidades principais: login, cadastro, viagens, relatórios e fluxo de passageiros.
 
 🛠 Tecnologias Utilizadas
-Next.js: Framework para React utilizado para o desenvolvimento do frontend.
+Next.js: Framework React para frontend.
 
-TypeScript: Superset do JavaScript para melhorar a escalabilidade e manutenção do código.
+TypeScript: Superset JavaScript para melhor escalabilidade.
 
-React: Biblioteca JavaScript para construção da interface de usuário.
+React: Biblioteca para UI.
 
-localStorage: Para armazenamento e recuperação de dados no lado do cliente (como informações de login).
+localStorage: Armazenamento local para dados do usuário.
 
 📁 Estrutura de Pastas
-/src: Diretório principal do código-fonte.
+/src — Código-fonte principal
 
-/pages: Contém todas as páginas do Next.js.
+/pages — Páginas Next.js
 
-/components: Componentes reutilizáveis no projeto.
+/components — Componentes reutilizáveis
 
-/public: Arquivos estáticos como imagens e ícones.
+/public — Arquivos estáticos (imagens, ícones)
 
 🛠️ Como Rodar o Projeto Localmente
-Clone o repositório:
-
 bash
 Copiar
 Editar
 git clone https://github.com/ChallengeCCR1/Challenge-FrontEnd.git
-Instale as dependências:
-
-bash
-Copiar
-Editar
+cd Challenge-FrontEnd
 npm install
-Execute o projeto:
-
-bash
-Copiar
-Editar
 npm run dev
-Acesse a aplicação em http://localhost:3000.
+Acesse a aplicação em: http://localhost:3000
 
 🎥 Vídeo de Apresentação
 Veja nosso vídeo de apresentação do projeto aqui.
@@ -121,6 +104,43 @@ Faça login no sistema com seu e-mail e senha.
 
 Acesse a página Iniciar Viagem e selecione a estação de origem e destino.
 
-O sistema calculará o tempo estimado de viagem e mostrará um progresso em tempo real.
+O sistema calculará o tempo estimado de viagem e mostrará uma barra de progresso em tempo real.
 
-Quando a viagem for concluída, o sistema exibirá uma mensagem de sucesso.
+Durante a viagem, acompanhe o tempo restante e o percentual concluído.
+
+Ao final da viagem, uma mensagem de sucesso será exibida.
+
+Consulte seu histórico de viagens na página de relatórios para revisar suas viagens anteriores.
+
+Visualize o mapa interativo da Linha 9 para planejar futuras viagens.
+
+Acesse os avisos e envie sugestões para melhorar o sistema.
+
+Principais APIs do Projeto
+API Viagem - Iniciar Viagem (POST)
+URL: http://localhost:8080/api/viagem/iniciar
+Inicia uma nova viagem, recebendo dados da estação de origem, destino e usuário, retornando o tempo estimado.
+
+API Relatório de Usuário (GET)
+URL: http://localhost:8080/relatorio/usuario/{id}?usuario={nome}
+Retorna o histórico detalhado de viagens do usuário, com origem, destino, tempo e horários.
+
+API Mapa da Linha 9 (GET)
+URL: http://localhost:8080/api/mapa/linha9
+Fornece dados para o mapa interativo da Linha 9, mostrando estações e fluxo de passageiros.
+
+API Previsão (GET)
+URL: http://localhost:8080/api/previsao?estacao={nomeEstacao}&horario={horario}
+Retorna a previsão de fluxo de passageiros para uma estação e horário específicos.
+
+API Status das Linhas Diamante (GET)
+URL: http://localhost:8080/status-linhas/diamante
+Informa o status em tempo real das linhas Diamante, incluindo atrasos ou interrupções.
+
+API Cadastro de Usuário (POST)
+URL: http://localhost:8080/api/usuario/cadastrar
+Permite o cadastro de novos usuários com dados como nome, e-mail e senha.
+
+API Login de Usuário (POST)
+URL: http://localhost:8080/api/usuario/login
+Autentica usuários para acesso ao sistema validando credenciais.
