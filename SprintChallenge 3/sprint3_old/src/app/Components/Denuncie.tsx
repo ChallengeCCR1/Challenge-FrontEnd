@@ -99,7 +99,7 @@ const Denuncie = () => {
               className="w-full h-auto"
             />
           </div>
-          <p className="text-lg sm:text-xl text-center">Sua informação estará protegida!</p>
+          <p className="text-lg sm:text-xl text-center">Sua informação estará protegida!!</p>
         </div>
 
         <div className="flex justify-center mt-10">
