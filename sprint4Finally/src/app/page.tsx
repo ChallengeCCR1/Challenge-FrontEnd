@@ -1,4 +1,3 @@
-import Header from "./Components/Header";
 import TelaLogin from "./Components/TelaLogin";
 
 export default function Home() {

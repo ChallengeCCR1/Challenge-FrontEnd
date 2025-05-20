@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import emailjs from 'emailjs-com';
 import Button from "../Botao/Botao";
 
 const Denuncie = () => {
@@ -21,22 +20,10 @@ const Denuncie = () => {
       return;
     }
 
-    const templateParams = {
-      from_email: email,
-      message: message,
-    };
-
-    emailjs
-      .send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams, 'SEU_PUBLIC_KEY')
-      .then(() => {
-        alert('Denúncia enviada com sucesso! Verifique seu e-mail para a confirmação.');
-        setMessage('');
-        setEmail('');
-        setImage(null);
-      })
-      .catch(() => {
-        alert('Erro ao enviar. Tente novamente.');
-      });
+    alert("Denúncia registrada localmente. (Simulação)");
+    setMessage('');
+    setEmail('');
+    setImage(null);
   };
 
   return (

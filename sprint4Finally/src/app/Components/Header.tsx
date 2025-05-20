@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Header = () => {
@@ -62,7 +61,7 @@ const Header = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
+          {[ 
             { nome: "Linha 8 Diamante", cor: "text-gray-700", status: status.diamante },
             { nome: "Linha 9 Esmeralda", cor: "text-emerald-600", status: status.esmeralda },
             { nome: "Linha 4 Amarela", cor: "text-yellow-500", status: status.amarela }
@@ -152,54 +151,46 @@ const Header = () => {
       <div className="flex flex-col gap-6 bg-[#fff] items-center justify-center border-2 border-[#cce5e3] rounded-2xl p-11 py-10 px-17 shadow-lg">
         <div className="w-[100%] mx-auto mb-7">
           <Link href="/sugestao">
-            <motion.div whileHover={{ rotate: 10 }}>
+            <div className="transition-transform duration-300 hover:scale-110">
               <Image
                 src="/img_icons/image_form.png"
                 alt="formulario"
                 width={72}
                 height={66}
-                className="transition-transform duration-300 hover:scale-110 mx-auto"
+                className="mx-auto"
               />
               <p className="font-bold mt-[5%] text-[1.4rem] sm:text-lg">
                 Deixe aqui sua opinião!
               </p>
-            </motion.div>
+            </div>
           </Link>
         </div>
       </div>
 
       <div className="fixed bottom-10 right-10">
-        <motion.button
+        <button
           onClick={scrollTo}
           className="bg-[#357063] text-white text-lg py-3 px-6 rounded-full shadow-lg hover:bg-[#2a5d51] transition-all duration-300"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
         >
           ↑ Voltar ao Topo.
-        </motion.button>
+        </button>
       </div>
 
       <div className="flex justify-center mt-19 mb-1 w-full px-4">
         <Link href="/avisos" className="w-full max-w-sm">
-          <motion.button
-            className="w-full bg-[#42807D] text-white text-lg sm:text-xl py-3 rounded-lg hover:bg-[#365d56] transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
+          <button className="w-full bg-[#42807D] text-white text-lg sm:text-xl py-3 rounded-lg hover:bg-[#365d56] transition-all duration-300">
             Voltar
-          </motion.button>
+          </button>
         </Link>
       </div>
 
       <div className="flex justify-center mt-10 mb-[30%] w-full px-4">
-        <motion.button
+        <button
           onClick={() => window.location.reload()}
           className="w-full max-w-sm bg-[#42807D] text-white text-lg sm:text-xl py-3 rounded-lg hover:bg-[#365d56] transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
         >
           Atualizar Página
-        </motion.button>
+        </button>
       </div>
     </main>
   );

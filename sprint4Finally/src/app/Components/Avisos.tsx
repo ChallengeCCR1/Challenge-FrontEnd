@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import PerfilUsuario from '../Perfil/page';
 import WatsonChat from '../WhatsonChatBot/WatsonChat';
@@ -47,56 +46,36 @@ const Avisos = () => {
   return (
     <div className="min-h-screen bg-[#f7f7f7] px-4 py-6 flex flex-col items-center relative overflow-hidden">
       <main className="w-full max-w-5xl">
-        <motion.div
-          className="mb-6 flex flex-col gap-5 items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="mb-6 flex flex-col gap-5 items-center transition-opacity duration-500 opacity-100">
           <PerfilUsuario />
-          <motion.button
-            className="w-full sm:w-auto px-6 py-3 bg-[#42807D] text-white rounded-lg hover:bg-[#357066] transition duration-300"
+          <button
+            className="w-full sm:w-auto px-6 py-3 bg-[#42807D] text-white rounded-lg hover:bg-[#357066] transform transition-transform duration-300 hover:scale-105"
             onClick={() => window.location.reload()}
-            whileHover={{ scale: 1.05 }}
           >
             Atualizar
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
-        <motion.div
-          className="text-center border p-5 rounded-2xl flex flex-col items-center mt-8 bg-white shadow-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="text-center border p-5 rounded-2xl flex flex-col items-center mt-8 bg-white shadow-sm transition-opacity duration-500 opacity-100">
           <h1 className="text-2xl font-bold text-[#42807D] mb-4">Consultar Linhas CCR</h1>
           <p className="text-base text-gray-600 mb-6 px-4">
             Verifique todas as linhas da CCR para encontrar as informações mais recentes sobre horários e trajetos.
           </p>
 
           <Link href="/header">
-            <motion.button
-              className="w-full sm:w-2/3 py-3 bg-[#42807D] p-15 text-white mb-5 rounded-lg hover:bg-[#357066] transition duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
+            <button className="w-full sm:w-2/3 py-3 bg-[#42807D] text-white mb-5 rounded-lg hover:bg-[#357066] transform transition-transform duration-300 hover:scale-105">
               Consultar Linhas CCR
-            </motion.button>
+            </button>
           </Link>
-        </motion.div>
+        </div>
 
         <section className="mt-20">
           <h2 className="text-3xl font-bold text-[#42807D] text-center mb-20">Membros do Projeto</h2>
-          <motion.div
-            className="w-full grid sm:grid-cols-2 gap-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="w-full grid sm:grid-cols-2 gap-8 transition-opacity duration-500 opacity-100">
             {users.map((user, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="relative p-6 pt-20 mb-10 rounded-xl shadow-md bg-white border hover:shadow-xl cursor-pointer text-center"
-                whileHover={{ scale: 1.05 }}
+                className="relative p-6 pt-20 mb-10 rounded-xl shadow-md bg-white border hover:shadow-xl cursor-pointer text-center transform transition-transform duration-300 hover:scale-105"
                 onClick={() => setSelectedUserIndex(index)}
               >
                 <div className="absolute top-[-48px] left-1/2 transform -translate-x-1/2 w-24 h-24 rounded-full border-4 border-white shadow-lg overflow-hidden">
@@ -111,66 +90,57 @@ const Avisos = () => {
                 <h1 className="font-bold text-xl text-[#42807D] mt-3">{user.name}</h1>
                 <p className="text-sm text-gray-500">{user.rm}</p>
                 <div className="flex justify-center gap-4 mt-2">
-                  <motion.a
+                  <a
                     href={user.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.3 }}
+                    className="transform transition-transform duration-300 hover:scale-125"
                   >
                     <FaGithub size={20} />
-                  </motion.a>
-                  <motion.a
+                  </a>
+                  <a
                     href={user.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.3 }}
+                    className="transform transition-transform duration-300 hover:scale-125"
                   >
                     <FaLinkedin size={20} />
-                  </motion.a>
+                  </a>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </section>
 
-        <AnimatePresence>
-          {selectedUserIndex !== null && (
-            <motion.div
-              key="info-modal"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              className="fixed top-1/2 left-1/2 z-50 bg-white rounded-xl shadow-2xl p-6 border w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2"
-            >
-              <h2 className="text-2xl font-semibold text-[#42807D] text-center mb-2">
-                {users[selectedUserIndex].role}
-              </h2>
-              <p className="text-md text-gray-700 text-center">
-                {users[selectedUserIndex].details}
-              </p>
-              <p className="text-sm text-gray-400 text-center mt-3 italic">
-                “{users[selectedUserIndex].contributions}”
-              </p>
-              <div className="mt-4 flex justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  className="bg-[#42807D] text-white py-2 px-6 rounded-full hover:bg-[#357066]"
-                  onClick={() => setSelectedUserIndex(null)}
-                >
-                  Fechar
-                </motion.button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {selectedUserIndex !== null && (
+          <div
+            key="info-modal"
+            className="fixed top-1/2 left-1/2 z-50 bg-white rounded-xl shadow-2xl p-6 border w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 transition-all duration-300 scale-100 opacity-100"
+          >
+            <h2 className="text-2xl font-semibold text-[#42807D] text-center mb-2">
+              {users[selectedUserIndex].role}
+            </h2>
+            <p className="text-md text-gray-700 text-center">
+              {users[selectedUserIndex].details}
+            </p>
+            <p className="text-sm text-gray-400 text-center mt-3 italic">
+              “{users[selectedUserIndex].contributions}”
+            </p>
+            <div className="mt-4 flex justify-center">
+              <button
+                className="bg-[#42807D] text-white py-2 px-6 rounded-full hover:bg-[#357066] transform transition-transform duration-300 hover:scale-110"
+                onClick={() => setSelectedUserIndex(null)}
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        )}
 
         <Link href="/Login">
-          <motion.button
-            className="w-[76%] mt-[15%] mx-[12%] sm:w-2/3 py-3 bg-[#42807D] p-15 text-white mb-5 rounded-lg hover:bg-[#357066] transition duration-300"
-            whileHover={{ scale: 1.05 }}
-          >
+          <button className="w-[76%] mt-[15%] mx-[12%] sm:w-2/3 py-3 bg-[#42807D] text-white mb-5 rounded-lg hover:bg-[#357066] transform transition-transform duration-300 hover:scale-105">
             Sair
-          </motion.button>
+          </button>
         </Link>
 
         <WatsonChat />
