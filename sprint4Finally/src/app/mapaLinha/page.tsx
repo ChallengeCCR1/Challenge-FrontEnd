@@ -1,9 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { TrainFront } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // ✅ Aqui está a correção
+import { useRouter } from 'next/navigation';
 
 interface Estacao {
   id_estacao: number;
@@ -15,14 +14,14 @@ interface Estacao {
 const MapaLinha = () => {
   const [estacoes, setEstacoes] = useState<Estacao[]>([]);
   const [hovered, setHovered] = useState<number | null>(null);
-  const router = useRouter(); // ✅ Aqui também
+  const router = useRouter();
 
   const obterZona = (nome: string): string => {
     const nomeEstacao = nome.toLowerCase();
 
     if (['osasco', 'jaguaré', 'villa lobos - jaguaré', 'pinheiros', 'butantã', 'lapa', 'são paulo-morumbi'].includes(nomeEstacao)) {
       return 'Zona Oeste - SP';
-    } 
+    }
     if (['morumbi', 'campo limpo', 'santo amaro'].includes(nomeEstacao)) {
       return 'Zona Sul - SP';
     }
@@ -47,22 +46,17 @@ const MapaLinha = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="relative border-l-4 border-green-600 pl-6 space-y-14 mt-10">
-        <motion.div
-          className="absolute -left-5 top-0 z-10 text-green-600"
-          animate={{
-            y: hovered !== null
-              ? `${(hovered) * 80}px` 
-              : `${(estacoes.length - 1) * 80}px`, 
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "linear",
-            repeatType: "loop",
+
+        {/* Simula o trem descendo automaticamente (sem motion) */}
+        <div
+          className="absolute -left-5 top-0 z-10 text-green-600 animate-bounce-slow"
+          style={{
+            animation: 'bounce 4s linear infinite',
+            animationDelay: `${hovered !== null ? hovered : estacoes.length - 1}s`,
           }}
         >
-          <TrainFront className="w-8 h-8 animate-pulse" />
-        </motion.div>
+          <TrainFront className="w-8 h-8 text-green-600" />
+        </div>
 
         {estacoes.map((estacao) => (
           <div
@@ -77,20 +71,15 @@ const MapaLinha = () => {
               <div className="ml-auto text-xs text-gray-500">👥 {estacao.passageirosSimulados}</div>
             </div>
 
-            <AnimatePresence>
-              {hovered === estacao.id_estacao && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="bg-white border border-green-200 rounded-lg p-3 mt-2 shadow-xl w-72 text-sm"
-                >
-                  <p><strong>Estação:</strong> {estacao.nome}</p>
-                  <p><strong>Local:</strong> {estacao.localizacao}</p>
-                  <p><strong>Passageiros:</strong> {estacao.passageirosSimulados}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {hovered === estacao.id_estacao && (
+              <div
+                className="bg-white border border-green-200 rounded-lg p-3 mt-2 shadow-xl w-72 text-sm transform transition-all duration-300 opacity-100 translate-y-0"
+              >
+                <p><strong>Estação:</strong> {estacao.nome}</p>
+                <p><strong>Local:</strong> {estacao.localizacao}</p>
+                <p><strong>Passageiros:</strong> {estacao.passageirosSimulados}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
