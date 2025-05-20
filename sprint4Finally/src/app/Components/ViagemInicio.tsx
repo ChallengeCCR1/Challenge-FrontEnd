@@ -15,7 +15,6 @@ interface Estacao {
 }
 
 const ViagemInicio = () => {
-  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   const [estacoesAPI, setEstacoesAPI] = useState<Estacao[]>([]);
   const [usuarioId, setUsuarioId] = useState('1');
   const [origemId, setOrigemId] = useState('');
@@ -28,24 +27,17 @@ const ViagemInicio = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [usuariosResponse, estacoesResponse] = await Promise.all([
-          fetch('/api/usuario/todos'),
+        const [, estacoesResponse] = await Promise.all([
+          fetch('/api/usuario/todos'), // chamado mas descartado
           fetch('/api/estacao/todas'),
         ]);
 
-        if (!usuariosResponse.ok || !estacoesResponse.ok) {
-          throw new Error('Falha ao carregar os dados');
+        if (!estacoesResponse.ok) {
+          throw new Error('Falha ao carregar as estações');
         }
 
-        const usuariosData: Usuario[] = await usuariosResponse.json();
         const estacoesData: Estacao[] = await estacoesResponse.json();
-
-        setUsuarios(usuariosData);
         setEstacoesAPI(estacoesData);
-
-        if (usuariosData.length > 0) {
-          setUsuarioId(usuariosData[0].id.toString());
-        }
 
         const agora = new Date();
         const agoraISO = agora.toISOString().slice(0, 16);
@@ -60,7 +52,7 @@ const ViagemInicio = () => {
 
   const iniciarViagem = async () => {
     if (!origemId || !destinoId) {
-      setErro('Preencha todos os campo!');
+      setErro('Preencha todos os campos!');
       return;
     }
 

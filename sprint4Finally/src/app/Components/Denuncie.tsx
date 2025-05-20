@@ -1,18 +1,13 @@
 'use client';
+
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import Button from "../Botao/Botao";
 
 const Denuncie = () => {
-  const [image, setImage] = useState<File | null>(null);
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0] || null;
-    setImage(file);
-  };
 
   const handleSubmit = () => {
     if (!message || !email) {
@@ -23,7 +18,6 @@ const Denuncie = () => {
     alert("Denúncia registrada localmente. (Simulação)");
     setMessage('');
     setEmail('');
-    setImage(null);
   };
 
   return (
@@ -60,12 +54,7 @@ const Denuncie = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
 
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="w-full mb-4 text-sm"
-            />
+            {/* Removido o campo de upload de imagem, pois não está sendo utilizado */}
 
             <button
               onClick={handleSubmit}

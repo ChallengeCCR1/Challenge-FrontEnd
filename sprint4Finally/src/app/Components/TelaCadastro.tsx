@@ -82,9 +82,12 @@ const TelaCadastro = () => {
       console.log('Usuário cadastrado com sucesso:', data);
 
       router.push('/Login');
-    } catch (error: any) {
-      console.error(error);
-      setErroCampos(error.message || 'Erro ao cadastrar. Tente novamente!');
+    } catch (error) {
+      if (error instanceof Error) {
+        setErroCampos(error.message || 'Erro ao cadastrar. Tente novamente!');
+      } else {
+        setErroCampos('Erro desconhecido');
+      }
     } finally {
       setLoading(false);
     }

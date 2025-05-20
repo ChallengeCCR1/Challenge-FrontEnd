@@ -22,9 +22,13 @@ const Relatorio = () => {
 
         const data: { viagens: Viagem[] } = await response.json();
         setHistoricoViagens(data.viagens); 
-      } catch (error) {
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          console.error('Erro na requisição para o histórico de viagens:', err.message);
+        } else {
+          console.error('Erro desconhecido na requisição para o histórico de viagens');
+        }
         setError('Erro ao carregar histórico de viagens.');
-        console.error('Erro na requisição para o histórico de viagens', error);
       } finally {
         setLoading(false);
       }

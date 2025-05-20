@@ -33,8 +33,12 @@ const TelaLogin = () => {
       const user = await response.json();
       localStorage.setItem('usuarioLogado', JSON.stringify(user));
       router.push('/avisos');
-    } catch (error: any) {
-      setErro(error.message || 'Email ou senha incorretos.');
+    } catch (error) {
+      if (error instanceof Error) {
+        setErro(error.message);
+      } else {
+        setErro('Email ou senha incorretos.');
+      }
     } finally {
       setLoading(false);
     }
@@ -88,7 +92,10 @@ const TelaLogin = () => {
 
       <div className="text-center">
         <p className="text-lg text-gray-600">
-          Ainda não tem uma conta? <Link href="/Cadastro"><span className="text-[#42807D] hover:underline cursor-pointer">Cadastre-se</span></Link>
+          Ainda não tem uma conta?{' '}
+          <Link href="/Cadastro">
+            <span className="text-[#42807D] hover:underline cursor-pointer">Cadastre-se</span>
+          </Link>
         </p>
       </div>
     </div>

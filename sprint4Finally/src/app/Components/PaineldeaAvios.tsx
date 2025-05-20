@@ -1,13 +1,23 @@
 'use client';
+
 import { useState } from "react";
 import { AiOutlineWarning } from "react-icons/ai";
-import { motion } from "framer-motion"; 
+
+// Define a type for the news object
+interface Noticia {
+  id: number;
+  imgSrc: string;
+  description: string;
+  date: string;
+  aviso: string;
+  details: string;
+}
 
 const Avisos = () => {
   const [showAvisos, setShowAvisos] = useState(false); 
-  const [selectedNews, setSelectedNews] = useState<any | null>(null);
+  const [selectedNews, setSelectedNews] = useState<Noticia | null>(null);
 
-  const noticias = [
+  const noticias: Noticia[] = [
     {
       id: 1,
       imgSrc: "img/paralizacao.jpg",
@@ -58,7 +68,7 @@ const Avisos = () => {
     },
   ];
 
-  const handleImageClick = (noticia: any) => {
+  const handleImageClick = (noticia: Noticia) => {
     setSelectedNews(noticia);
   };
 
@@ -71,37 +81,25 @@ const Avisos = () => {
           </h2>
         </div>
 
-        <div className="flex justify-center mt-6 border-3  border-[#42807D] mx-auto w-[33%] pt-2 pb-3 rounded-[20%] ">
-          <motion.div
-            initial={{ x: 200 }}
-            animate={{ x: 0 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+        <div className="flex justify-center mt-6 border-3  border-[#42807D] mx-auto w-[33%] pt-2 pb-3 rounded-[20%]">
+          <div
+            className="cursor-pointer text-4xl text-[#42807D] transition-transform duration-300 transform hover:scale-105"
             onClick={() => setShowAvisos(!showAvisos)}
-            className="cursor-pointer text-4xl text-[#42807D]"
           >
             <AiOutlineWarning />
-          </motion.div>
+          </div>
         </div>
 
         {showAvisos && (
-  <motion.div
-    className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 z-40"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.5 }}
-    onClick={() => setShowAvisos(false)}
-  />
-)}
-
+          <div
+            className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 z-40 transition-opacity duration-500 opacity-100"
+            onClick={() => setShowAvisos(false)}
+          />
+        )}
 
         {showAvisos && (
-          <motion.div
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg w-[80%] sm:w-[60%] lg:w-[40%] z-50 overflow-y-auto max-h-[80vh]"
-            initial={{ x: '100%', opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: '100%', opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          <div
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg w-[80%] sm:w-[60%] lg:w-[40%] z-50 overflow-y-auto max-h-[80vh] transition-transform duration-500 transform translate-x-0 opacity-100"
           >
             <div className="text-center">
               <h3 className="text-xl font-bold mb-4">Avisos Importantes</h3>
@@ -109,7 +107,7 @@ const Avisos = () => {
                 {noticias.map((noticia) => (
                   <div
                     key={noticia.id}
-                    className="h-[330px] rounded-2xl  overflow-hidden cursor-pointer duration-300 hover:shadow-lg"
+                    className="h-[330px] rounded-2xl overflow-hidden cursor-pointer duration-300 hover:shadow-lg"
                     onClick={() => handleImageClick(noticia)}
                   >
                     <div className="flex flex-col bg-[#42807D] p-4">
@@ -135,18 +133,15 @@ const Avisos = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {selectedNews && (
-          <motion.div
+          <div
             className="fixed top-0 left-0 right-0 bottom-0 bg-opacity-60 bg-gray-900 z-50 p-4 sm:p-8 flex justify-center items-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            onClick={() => setSelectedNews(null)}
           >
-            <div className="bg-white p-4 sm:p-6 rounded-lg w-full sm:w-[80%] max-w-[800px] overflow-y-auto max-h-[80vh]">
+            <div className="bg-white p-4 sm:p-6 rounded-lg w-full sm:w-[80%] max-w-[800px] overflow-y-auto max-h-[80vh] transition-opacity duration-500 opacity-100">
               <div className="text-center">
                 <img
                   src={selectedNews.imgSrc}
@@ -167,7 +162,7 @@ const Avisos = () => {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
     </div>

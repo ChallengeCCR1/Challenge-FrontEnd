@@ -4,8 +4,14 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
+interface Usuario {
+  usuario: string;
+  email: string;
+  foto?: string;
+}
+
 const PerfilUsuario = () => {
-  const [dadosUsuario, setDadosUsuario] = useState<any>(null);
+  const [dadosUsuario, setDadosUsuario] = useState<Usuario | null>(null);
   const [exibirPerfil, setExibirPerfil] = useState<boolean>(false);
   const [novaFoto, setNovaFoto] = useState<string | null>(null);
   const router = useRouter();

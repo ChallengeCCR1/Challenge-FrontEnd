@@ -35,10 +35,6 @@ const Esmeralda = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [isViagemDisabled, setIsViagemDisabled] = useState(false);
 
-  const toggleStation = (station: string) => {
-    setExpandedStation(expandedStation === station ? null : station);
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
       setTrainIndex((prev) => (prev + 1) % estacoesLinha9.length);
