@@ -60,7 +60,7 @@ const ViagemInicio = () => {
 
   const iniciarViagem = async () => {
     if (!origemId || !destinoId) {
-      setErro('Preencha todos os campos');
+      setErro('Preencha todos os campo!');
       return;
     }
 

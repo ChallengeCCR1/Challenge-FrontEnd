@@ -47,7 +47,6 @@ const MapaLinha = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="relative border-l-4 border-green-600 pl-6 space-y-14 mt-10">
 
-        {/* Simula o trem descendo automaticamente (sem motion) */}
         <div
           className="absolute -left-5 top-0 z-10 text-green-600 animate-bounce-slow"
           style={{
