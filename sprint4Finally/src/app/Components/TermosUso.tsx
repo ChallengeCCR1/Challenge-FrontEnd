@@ -41,7 +41,7 @@ const TermosUso = () => {
           <li>Enviar ou transmitir vírus, malware ou outro conteúdo prejudicial.</li>
           <li>Interferir ou prejudicar o funcionamento do Aplicativo ou de seus servidores.</li>
           <li>Realizar qualquer atividade que possa causar danos, interrupções ou sobrecarga no Aplicativo.</li>
-          <li>Usar o Aplicativo de maneira fraudulenta ou em violação de qualquer direito de propriedade intelectual de terceiros.</li>
+          <li>Usar o Aplicativo de maneira fraudulenta ou em violação de qualquer direito de propriedade intelectual de terceiros</li>
         </ul>
 
         <h2 className="text-2xl font-semibold text-[#42807D]">Foro e Legislação Aplicável</h2>
