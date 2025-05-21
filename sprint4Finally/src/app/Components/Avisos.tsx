@@ -19,7 +19,7 @@ const Avisos = () => {
       details: 'Pedro é especializado em construir a base sólida do sistema. Trabalhou no backend e integração com serviços externos.',
       github: 'https://github.com/devpedrosena1',
       linkedin: 'https://www.linkedin.com/in/pedro-henrique-sena',
-      photo: '/img/pedro.JPEG',
+      photo: '/img/pedro.jpeg',
     },
     {
       name: 'Sulamita Viegas Dos Santos',

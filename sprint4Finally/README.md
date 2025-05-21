@@ -170,11 +170,25 @@ Acesse em: http://localhost:3000
 
 ## 🎥 **Vídeo de Apresentação**
 
-📽️ *(Insira o link do vídeo aqui, se disponível)*
+📽️ *(https://www.youtube.com/watch?si=dEPzTfV44Aw_BLOs&v=gVor1AxFEl4&feature=youtu.be)*
 
 ---
 
 ## 💡 **Exemplo de Uso**
+
+
+## 🚀 Acesso à Aplicação
+
+Você pode acessar a aplicação hospedada na Vercel pelo link abaixo:
+
+🔗 **[Future Station - Acesse aqui](https://challengefrontend-1v4nf5ygq-challengeccr1s-projects.vercel.app/)**
+
+> *Observação:* Caso a aplicação demore um pouco para carregar na primeira vez, é porque a Vercel pode estar "acordando" o projeto.
+
+
+
+
+
 
 1. **Acesso à página de login**:  
    Acesse a página de login e insira seu **e-mail** e **senha**.
@@ -208,86 +222,44 @@ Acesse em: http://localhost:3000
 
 ---
 
+# Documentação para Colocar a Aplicação Java no Ar
 
+## Objetivo
+Este documento tem como objetivo fornecer um passo a passo para colocar a aplicação Java do projeto **Future Station Challenge** no ar, caso alguém precise hospedar a API que foi construída utilizando Java, mas que, por questões de tempo, não foi hospedada pela equipe.
 
-Documentação para Colocar a Aplicação Java no Ar
-Objetivo: Este documento tem como objetivo fornecer um passo a passo para colocar a aplicação Java do projeto Future Station Challenge no ar, caso alguém precise hospedar a API que foi construída utilizando Java, mas que, por questões de tempo, não foi hospedada pela equipe.
+## Passos para Colocar a Aplicação no Ar
 
-Passos para Colocar a Aplicação no Ar
-1. Clonando o Repositório
-Acesse o repositório do projeto:
+| Passo | Descrição |
+|-------|-----------|
+| **1. Clonando o Repositório** | Acesse o repositório do projeto e clone-o para o seu ambiente local. Você terá uma pasta chamada **ChallengeJava** no seu diretório local. |
+| **2. Abrindo o Projeto na IDE** | Dentro da pasta clonada, navegue até `src -> main -> java -> br -> com -> fiap`. Abra o projeto na sua IDE de preferência (recomendamos o **IntelliJ IDEA Ultimate**). |
+| **3. Configuração do Quarkus Tools Plugin** | Caso o plugin **Quarkus** não esteja instalado, instale-o da seguinte maneira: No canto superior direito da sua IDE, clique na engrenagem e selecione **Plugins**. Na tela de plugins, selecione a opção **Marketplace** e busque por **Quarkus Tools**, clique em **Install** e reinicie a IDE. |
+| **4. Configurando o Plugin Quarkus** | Após reiniciar a IDE, clique em **Run Configurations** no canto superior direito, selecione **Edit Configurations**, clique no ícone `+` e escolha **Quarkus**. Clique em **Apply** e depois em **OK** para salvar. |
+| **5. Rodando a Aplicação** | Com a configuração pronta, clique no botão **Play** ou **Run** para iniciar a aplicação. Você verá no terminal: `Quarkus started in XXs. (Running)`, o que indica que a aplicação foi iniciada com sucesso. |
 
-Repositório ChallengeJava
+## Problemas de Funcionalidade de Viagem e Relatório
 
-Clone o repositório para o seu ambiente local.
+Durante a **Sprint 4**, nos deparamos com um erro de **CORS** nas funcionalidades de **Viagem** e **Relatório**. Esse problema tem impacto direto no funcionamento dessas funcionalidades, pois sem uma viagem registrada, não é possível gerar um relatório.
 
-Você terá uma pasta chamada ChallengeJava no seu diretório local.
+| Erro | Descrição |
+|------|-----------|
+| **CORS (Cross-Origin Resource Sharing)** | É um mecanismo de segurança que impede que páginas da web façam requisições a servidores de domínios diferentes. Durante os testes no **Postman**, a API funcionou corretamente, mas nas funcionalidades de Viagem e Relatório, o erro de CORS impediu o funcionamento adequado. |
 
-2. Abrindo o Projeto na IDE
-Dentro da pasta clonada, navegue até:
-src -> main -> java -> br -> com -> fiap
-Aqui estarão todos os arquivos e classes do nosso projeto.
+### Tentativas de Solução
 
-Abra o projeto na sua IDE de preferência (recomendamos o IntelliJ IDEA Ultimate).
+| Tentativa | Descrição |
+|-----------|-----------|
+| **Contato com os Professores** | Buscamos auxílio com os professores de Java e Frontend, mas não conseguimos resolver o problema. |
+| **Tentativas de Implementação** | Foram testadas diversas abordagens, mas nenhuma teve sucesso em resolver o erro de CORS. |
 
-3. Configuração do Quarkus Tools Plugin
-Caso você não tenha o plugin do Quarkus instalado na sua IDE, siga os seguintes passos:
+### Conclusão
 
-No canto superior direito da sua IDE, clique na engrenagem e selecione Plugins.
+Embora a aplicação funcione corretamente quando testada via **Postman**, o erro de **CORS** impediu que as funcionalidades de **Viagem** e **Relatório** funcionassem como esperado na interface. No entanto, a API está funcional e interage corretamente com o banco de dados.
 
-Na tela de plugins, selecione a opção Marketplace e digite "Quarkus Tools" na barra de pesquisa.
+**Nota:** A solução para o problema de CORS pode depender de configurações específicas no servidor backend ou na aplicação frontend, por isso recomendamos uma revisão adicional dessas configurações.
 
-Se você não tiver o plugin instalado, clique em Install.
+## Considerações Finais
 
-Após a instalação, reinicie sua IDE.
+A API foi configurada corretamente e está em funcionamento, com exceção das funcionalidades de **Viagem** e **Relatório**, que estão inativas devido ao erro de **CORS**.
 
-4. Configurando o Plugin Quarkus
-Após reiniciar a IDE, siga os passos abaixo para configurar o Quarkus:
-
-Clique na seta para baixo no canto superior direito da IDE, onde aparece a opção Run Configurations.
-
-Na tela que abrir, clique em Edit Configurations.
-
-Na janela de configurações, clique no ícone + para adicionar uma nova configuração.
-
-Selecione a opção Quarkus na lista de configurações.
-
-Clique em Apply e depois em OK para salvar.
-
-Agora, o Quarkus está corretamente configurado.
-
-5. Rodando a Aplicação
-Com a configuração pronta, basta clicar no botão Play ou Run na IDE para iniciar a aplicação.
-
-Se tudo estiver correto, você verá algo semelhante a isso no terminal:
-
-scss
-Copiar
-Editar
-Quarkus started in XXs. (Running)
-Isso indica que a aplicação foi iniciada com sucesso.
-
-Problemas de Funcionalidade de Viagem e Relatório
-Durante a Sprint 4, nos deparamos com um erro de CORS nas funcionalidades de Viagem e Relatório. Esse problema tem impacto direto no funcionamento dessas funcionalidades, pois sem uma viagem registrada, não é possível gerar um relatório.
-
-Contexto do Erro de CORS
-CORS (Cross-Origin Resource Sharing) é um mecanismo de segurança que impede que páginas da web façam requisições a servidores de domínios diferentes.
-
-No nosso caso, durante os testes no Postman, a API funcionou corretamente, realizando a inserção de dados no banco de dados ao concluir uma viagem e recuperando os dados corretamente ao consultar o relatório.
-
-Tentativas de Solução
-Durante o processo, tentamos diversas soluções para resolver o erro de CORS:
-
-Contato com os Professores: Buscamos auxílio com os professores de Java e Frontend, mas, apesar das tentativas, não conseguimos resolver o problema.
-
-Tentativas de Implementação: Várias abordagens foram testadas para contornar o erro de CORS, mas nenhuma delas teve sucesso.
-
-Conclusão
-Embora a aplicação funcione corretamente quando testada via Postman, o erro de CORS impediu que as funcionalidades de Viagem e Relatório funcionassem como esperado na interface. Gostaríamos de enfatizar que, apesar das tentativas de resolução, o problema de CORS não foi solucionado. No entanto, a API está funcional e interage corretamente com o banco de dados.
-
-Nota: A solução para o problema de CORS pode depender de configurações específicas no servidor backend ou na aplicação frontend, e por isso, recomendamos uma revisão adicional dessas configurações.
-
-Considerações Finais
-A API foi configurada corretamente e está em funcionamento, com exceção da funcionalidade de Viagem e Relatório, que estão inativas devido ao erro de CORS.
-
-Continuaremos trabalhando para corrigir esse erro, mas por enquanto, a aplicação de Previsão de Pico, Mapa da Linha e Status Operacional estão operacionais.
+Continuaremos trabalhando para corrigir esse erro, mas, por enquanto, a aplicação de **Previsão de Pico**, **Mapa da Linha** e **Status Operacional** estão operacionais.
