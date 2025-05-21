@@ -1,128 +1,121 @@
-🚆 Future Station – Sistema de Viagem e Gestão de Fluxo de Passageiros
-Bem-vindo ao repositório do Future Station, um sistema interativo de transporte desenvolvido com foco em experiência do usuário, eficiência no deslocamento e informação em tempo real para os passageiros das estações da CCR.
+# 🚆 Future Station – Sistema de Viagem e Gestão de Fluxo de Passageiros
 
-👥 Integrantes do Time
-Matteus Viegas dos Santos – RM 561090
+Bem-vindo ao repositório do **Future Station**, um sistema interativo de transporte desenvolvido com foco na **experiência do usuário**, **eficiência no deslocamento** e **informação em tempo real** para os passageiros das estações da **CCR**.
 
-Pedro Henrique de Souza Sena – RM 561178
+---
 
-Sulamita Viegas dos Santos – RM 561089
+## 👥 Integrantes do Time
 
-🎯 Objetivo do Projeto
-O Future Station é uma plataforma desenvolvida para usuários do transporte público, com o objetivo de:
+- **Matteus Viegas dos Santos** – RM 561090  
+- **Pedro Henrique de Souza Sena** – RM 561178  
+- **Sulamita Viegas dos Santos** – RM 561089  
 
-Calcular tempo estimado de viagem entre estações;
+---
 
-Exibir relatórios de viagens anteriores;
+## 🎯 Objetivo do Projeto
 
-Fornecer dados de fluxo de passageiros e horários de pico;
+O Future Station é uma plataforma desenvolvida para usuários do transporte público com o objetivo de:
 
-Apresentar status operacionais das linhas;
+- 📍 Calcular tempo estimado de viagem entre estações  
+- 📈 Exibir relatórios de viagens anteriores  
+- 👥 Fornecer dados de fluxo de passageiros e horários de pico  
+- ⚠️ Apresentar status operacionais das linhas  
+- 🤖 Integrar funcionalidades interativas como chatbot e formulários de feedback  
+- 💻 Oferecer uma interface moderna, acessível e conectada às necessidades do usuário  
 
-Integrar funcionalidades interativas como chatbot e formulários de feedback;
+Nosso sistema promove **planejamento de rota inteligente**, **interatividade**, **transparência nas informações** e **conectividade entre tecnologias**.
 
-Oferecer uma interface moderna, acessível e conectada às necessidades do usuário.
+---
 
-Nosso sistema promove planejamento de rota inteligente, interatividade, transparência nas informações e conectividade entre tecnologias.
+## ✅ Funcionalidades Implementadas
 
-✅ Funcionalidades Implementadas
-1. 🔐 Login e Cadastro
-Acesso seguro com autenticação.
+### 1. 🔐 Login e Cadastro
+- Autenticação segura  
+- Cadastro com nome, e-mail e senha  
+- Integração com banco Oracle via API Java  
+- Comunicação entre back-end Java e módulo Python  
 
-Cadastro com nome, e-mail e senha.
+---
 
-Dados enviados ao banco Oracle via API Java, com comunicação com módulo Python.
+### 2. 🏠 Página Principal Pós-Login
+- Redirecionamento para tela inicial após login  
+- Apresentação dos integrantes  
+- Botão "Saber Mais" com informações detalhadas:  
+  - Status operacional das Linhas 4, 8 e 9  
+  - Horário de funcionamento  
+  - Formulário de feedback e reclamações  
 
-2. 🏠 Página Principal Pós-Login
-Após efetuar login, o usuário é redirecionado para a tela inicial do sistema, que contém:
+---
 
-Apresentação dos integrantes do projeto;
+### 3. 🚋 Linha 9 – Funcionalidades Principais
 
-Botão "Saber Mais" com informações detalhadas das linhas disponíveis:
+#### ▸ Iniciar Viagem
+- Escolha de estação de origem e destino  
+- Cálculo do tempo estimado  
+- Barra de progresso com percentual e tempo restante  
 
-Status operacional das Linhas 4, 8 e 9;
+> 🔧 **Nota técnica:**  
+> Durante a integração do front-end (Vercel) com o back-end (Java), foi necessário configurar o CORS devido à diferença de domínios.  
+> A API de Relatório depende da API de Viagem, tornando ambas interdependentes.
 
-Horário de funcionamento;
+#### ▸ Relatório de Viagens
+- Histórico com origem, destino, horário e duração
 
-Formulário de feedback e reclamações.
+#### ▸ Mapa Interativo da Linha 9
+- Visualização em tempo real das estações  
+- Destaque da zona sul e número de passageiros por estação  
 
-3. 🚋 Linha 9 – Funcionalidades Principais
-Ao acessar a Linha 9, o usuário encontra:
+#### ▸ Previsão de Horário de Pico
+- Gráficos e dados com horários de maior lotação  
+- Ajuda no planejamento de viagens estratégicas  
 
-▸ Iniciar Viagem
-Escolha da estação de origem e destino;
+#### ▸ Estações Detalhadas – Exemplo: Pinheiros
+- Ícones com acessibilidade, botão de denúncia rápida  
+- Integração com chatbot para dúvidas sobre rotas e horários  
 
-Cálculo de tempo estimado;
+---
 
-Barra de progresso com percentual da viagem e tempo restante.
-
-🔧 Adendo técnico:
-Durante a integração do front (Vercel) com o back (Java), foi identificado um erro de CORS, causado pela diferença de domínios.
-Foi necessário configurar o back-end para aceitar origens externas, como o domínio do Vercel.
-Além disso, a API de Relatório depende dos dados gerados pela API de Viagem, tornando ambas interdependentes.
-
-▸ Relatório de Viagens
-Histórico completo com estação de origem, destino, horário e duração.
-
-▸ Mapa Interativo da Linha 9
-Visualização em tempo real das estações da linha;
-
-Destaque da zona sul e número de passageiros por estação.
-
-▸ Previsão de Horário de Pico
-Gráficos e dados mostrando os momentos de maior lotação em cada estação;
-
-Ajuda no planejamento de viagens em horários estratégicos.
-
-▸ Estações Detalhadas – Exemplo: Pinheiros
-Ao selecionar a estação Pinheiros, o usuário acessa:
-
-Ícones com informações de acessibilidade, botão de denúncia rápida;
-
-Integração com o Chatbot interativo, que responde dúvidas frequentes sobre o sistema, rotas, horários e status das linhas.
-
-4. 💬 Chatbot Interativo
-Disponível nas estações e na página principal.
-
+### 4. 💬 Chatbot Interativo
+Disponível nas estações e na página principal.  
 Responde perguntas sobre:
 
-Viagens;
+- Viagens  
+- Status das linhas  
+- Como utilizar o sistema  
+- Problemas e reclamações  
 
-Status das linhas;
+---
 
-Como utilizar o sistema;
+### 5. 📢 Avisos e Sugestões
+- Página com atualizações das linhas  
+- Formulário para envio de feedback, sugestões e reclamações  
 
-Problemas e reclamações.
+---
 
-5. 📢 Avisos e Sugestões
-Página com atualizações e mudanças nas linhas.
+### 6. 👤 Perfil do Usuário
+- Visualização de nome, e-mail e foto de perfil  
+- Edição de imagem de perfil e opção de logout  
 
-Formulário de envio de feedback, sugestões e reclamações.
+---
 
-6. 👤 Perfil do Usuário
-Visualização de nome, e-mail e foto de perfil.
+## 🛠️ Roadmap do Projeto
 
-Edição de imagem e opção de logout.
+### 🔹 Fase 1: Planejamento
+- Criação de protótipos no Figma  
+- Definição visual: cores, tipografia e layout  
 
-🛠️ Roadmap do Projeto
-Fase 1: Planejamento
-Criação de protótipos no Figma;
+### 🔹 Fase 2: Estrutura Inicial
+- Desenvolvimento com HTML/CSS  
+- Estruturação de páginas e componentes básicos  
 
-Definição visual (cores, tipografia, layout).
+### 🔹 Fase 3: Integração e Stack Completa
+- Migração para Next.js com TypeScript  
+- Criação das APIs em Java  
+- Integração com módulo Python  
+- Banco de dados Oracle para persistência  
 
-Fase 2: Estrutura Inicial
-Desenvolvimento com HTML/CSS;
+---
 
-Estruturação de páginas e componentes básicos.
-
-Fase 3: Integração e Stack Completa
-Migração para Next.js com TypeScript;
-
-Criação das APIs em Java;
-
-Integração com módulo Python;
-
-Banco de dados Oracle para persistência.
 
 🧰 Tecnologias Utilizadas
 Tecnologia	Função
@@ -185,6 +178,11 @@ Você pode acessar a aplicação hospedada na Vercel pelo link abaixo:
 
 > *Observação:* Caso a aplicação demore um pouco para carregar na primeira vez, é porque a Vercel pode estar "acordando" o projeto.
 
+
+##  ☕ Repositório do Back-End (Java)
+O back-end do sistema Future Station foi desenvolvido em Java, com foco em desempenho, segurança e integração com múltiplas tecnologias. Ele é responsável pelo processamento das requisições da aplicação, autenticação de usuários, comunicação com o banco de dados Oracle, e envio de dados para os módulos front-end e Python.
+
+🔗 Acesse o repositório Java aqui: https://github.com/ChallengeCCR1/ChallengeJava
 
 
 
