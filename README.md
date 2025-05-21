@@ -232,7 +232,7 @@ Este documento tem como objetivo fornecer um passo a passo para colocar a aplica
 | Passo | Descrição |
 |-------|-----------|
 | **1. Clonando o Repositório** | Acesse o repositório do projeto e clone-o para o seu ambiente local. Você terá uma pasta chamada **ChallengeJava** no seu diretório local. |
-| **2. Abrindo o Projeto na IDE** | Dentro da pasta clonada, navegue até `src -> main -> java -> br -> com -> fiap`. Abra o projeto na sua IDE de preferência (recomendamos o **IntelliJ IDEA Ultimate**). |
+| **2. Abrindo o Projeto na IDE** | Dentro da pasta clonada, navegue até `src -> main -> java -> br -> com -> fiap`. Abra o projeto na sua IDE de preferência (recomendamos o **IntelliJ IDEA Ultimate**).. |
 | **3. Configuração do Quarkus Tools Plugin** | Caso o plugin **Quarkus** não esteja instalado, instale-o da seguinte maneira: No canto superior direito da sua IDE, clique na engrenagem e selecione **Plugins**. Na tela de plugins, selecione a opção **Marketplace** e busque por **Quarkus Tools**, clique em **Install** e reinicie a IDE. |
 | **4. Configurando o Plugin Quarkus** | Após reiniciar a IDE, clique em **Run Configurations** no canto superior direito, selecione **Edit Configurations**, clique no ícone `+` e escolha **Quarkus**. Clique em **Apply** e depois em **OK** para salvar. |
 | **5. Rodando a Aplicação** | Com a configuração pronta, clique no botão **Play** ou **Run** para iniciar a aplicação. Você verá no terminal: `Quarkus started in XXs. (Running)`, o que indica que a aplicação foi iniciada com sucesso. |
