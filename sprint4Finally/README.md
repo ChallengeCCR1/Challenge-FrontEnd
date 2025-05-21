@@ -50,7 +50,7 @@ Nosso sistema promove **planejamento de rota inteligente**, **interatividade**, 
 ### 3. 🚋 Linha 9 – Funcionalidades Principais
 
 #### ▸ Iniciar Viagem
-- Escolha de estação de origem e destino  
+- Escolha de estação de origem e destino. 
 - Cálculo do tempo estimado  
 - Barra de progresso com percentual e tempo restante  
 
