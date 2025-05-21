@@ -7,18 +7,18 @@ type ItemType = {
   disabled: boolean;
   link?: string;
 };const items: ItemType[] = [
-  { name: "Wi-Fi", icon: "/img_Icons/Wi-fi.png", disabled: false, link: "/pinheiro/wifi" },
-  { name: "Banheiro", icon: "/img_Icons/img2.webp", disabled: false, link: "/pinheiro/banheiro" },
-  { name: "Acessibilidade", icon: "/img_Icons/img3.webp", disabled: false, link: "/pinheiro/acessibilidade" },
-{ name: "Achados & Perdidos", icon: "/img_Icons/img4.webp", disabled: false, link: "/pinheiro/achados-e-perdidos" },
-  { name: "Pontos turísticos e culturais", icon: "/img_Icons/img5.webp", disabled: false, link: "/pinheiro/pontos" },
-  { name: "Mapa CPTM", icon: "/img_Icons/img6.webp", disabled: false, link: "/pinheiro/mapa" },
-  { name: "Vagas", icon: "/img_Icons/img7.webp", disabled: false, link: "/pinheiro/vagas" },
-  { name: "Terminais", icon: "/img_Icons/img8.webp", disabled: false, link: "/pinheiro/terminais" },
-  { name: "Sobre", icon: "/img_Icons/img9.webp", disabled: false, link: "/pinheiro/sobre" },
-  { name: "Aeroportos", icon: "/img_Icons/img10.webp", disabled: false, link: "/pinheiro/aeroporto" },
-  { name: "Banco 24H", icon: "/img_Icons/img12.webp", disabled: false, link: "/pinheiro/banco" },
-  { name: "Denuncie", icon: "/img_Icons/img11.webp", disabled: false, link: "/pinheiro/denuncie" },
+  { name: "Wi-Fi", icon: "/img_icons/Wi-fi.png", disabled: false, link: "/pinheiro/wifi" },
+  { name: "Banheiro", icon: "/img_icons/img2.webp", disabled: false, link: "/pinheiro/banheiro" },
+  { name: "Acessibilidade", icon: "/img_icons/img3.webp", disabled: false, link: "/pinheiro/acessibilidade" },
+{ name: "Achados & Perdidos", icon: "/img_icons/img4.webp", disabled: false, link: "/pinheiro/achados-e-perdidos" },
+  { name: "Pontos turísticos e culturais", icon: "/img_icons/img5.webp", disabled: false, link: "/pinheiro/pontos" },
+  { name: "Mapa CPTM", icon: "/img_icons/img6.webp", disabled: false, link: "/pinheiro/mapa" },
+  { name: "Vagas", icon: "/img_icons/img7.webp", disabled: false, link: "/pinheiro/vagas" },
+  { name: "Terminais", icon: "/img_icons/img8.webp", disabled: false, link: "/pinheiro/terminais" },
+  { name: "Sobre", icon: "/img_icons/img9.webp", disabled: false, link: "/pinheiro/sobre" },
+  { name: "Aeroportos", icon: "/img_icons/img10.webp", disabled: false, link: "/pinheiro/aeroporto" },
+  { name: "Banco 24H", icon: "/img_icons/img12.webp", disabled: false, link: "/pinheiro/banco" },
+  { name: "Denuncie", icon: "/img_icons/img11.webp", disabled: false, link: "/pinheiro/denuncie" },
 ];
 
 

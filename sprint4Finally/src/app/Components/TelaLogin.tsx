@@ -45,7 +45,7 @@ const TelaLogin = () => {
   };
 
   return (
-    <div className="w-full max-w-[420px] mx-auto border-4 border-solid mt-[23%] border-green-800 p-6 bg-white rounded-lg sm:max-w-[350px]">
+    <div className="w-[90%] max-w-[420px] mx-auto border-4 border-solid mt-[23%] border-green-800 p-6 bg-white rounded-lg sm:max-w-[350px]">
       <div className="w-[80%] mx-auto mt-8 mb-9">
         <h1 className="font-bold text-center text-3xl sm:text-4xl">
           FUTURE <span className="text-[#42807D]">STATION</span>
@@ -54,7 +54,7 @@ const TelaLogin = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-5">
-          <label htmlFor="email" className="block ml-2 font-medium text-gray-700">Email:</label>
+          <label htmlFor="email" className="block ml-2 font-medium text-left text-gray-700">Email:</label>
           <input
             type="email"
             id="email"
@@ -66,7 +66,7 @@ const TelaLogin = () => {
         </div>
 
         <div className="mb-7">
-          <label htmlFor="senha" className="block ml-2 font-medium text-gray-700">Senha:</label>
+          <label htmlFor="senha" className="block ml-2 font-medium text-left   text-gray-700">Senha:</label>
           <input
             type="password"
             id="senha"
@@ -96,9 +96,7 @@ const TelaLogin = () => {
           <Link href="/Cadastro">
             <span className="text-[#42807D] hover:underline cursor-pointer">Cadastre-se</span>
           </Link>
-            <Link href="/avisos">
-            <span className="text-[#42807D] hover:underline cursor-pointer">home-forçada</span>
-          </Link>
+       
         </p>
       </div>
     </div>

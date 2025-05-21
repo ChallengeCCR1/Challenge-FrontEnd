@@ -1,92 +1,148 @@
-🚆 Future Station: Sistema de Viagem e Gestão de Fluxo de Passageiros
-Bem-vindo ao repositório da Future Station! Este projeto tem como objetivo melhorar o fluxo de passageiros dentro das estações da CCR e fornecer uma experiência interativa e informativa para os usuários do sistema de transporte.
+🚆 Future Station – Sistema de Viagem e Gestão de Fluxo de Passageiros
+Bem-vindo ao repositório do Future Station, um sistema interativo de transporte desenvolvido com foco em experiência do usuário, eficiência no deslocamento e informação em tempo real para os passageiros das estações da CCR.
 
-Integrantes do Time
-Matteus Viegas dos Santos - RM 561090
+👥 Integrantes do Time
+Matteus Viegas dos Santos – RM 561090
 
-Pedro Henrique de Souza Sena - RM 561178
+Pedro Henrique de Souza Sena – RM 561178
 
-Sulamita Viegas dos Santos - RM 561089
+Sulamita Viegas dos Santos – RM 561089
 
-Obrigado por visitar o nosso repositório!
+🎯 Objetivo do Projeto
+O Future Station é uma plataforma desenvolvida para usuários do transporte público, com o objetivo de:
 
-🚆 Objetivo do Projeto
-O Future Station oferece uma interface interativa de viagem para os usuários de transporte público, permitindo calcular e exibir os tempos estimados de viagem entre diferentes estações. Além disso, o sistema registra as viagens realizadas, apresenta relatórios detalhados de fluxo de passageiros, e permite interações com funcionalidades como avisos e sugestões.
+Calcular tempo estimado de viagem entre estações;
 
-Funcionalidades Implementadas
-1. Iniciar Viagem
-O usuário pode selecionar a estação de origem e destino.
+Exibir relatórios de viagens anteriores;
 
-O sistema calcula o tempo estimado de viagem e exibe uma barra de progresso em tempo real, informando quanto falta para a chegada.
+Fornecer dados de fluxo de passageiros e horários de pico;
 
-Durante a viagem, o usuário vê o tempo restante e o percentual de viagem concluído.
+Apresentar status operacionais das linhas;
 
-2. Relatório de Viagens
-Permite que o usuário visualize um histórico de suas viagens anteriores, com detalhes como estação de origem, destino, tempo de viagem e horário.
+Integrar funcionalidades interativas como chatbot e formulários de feedback;
 
-3. Horário de Pico e Fluxo de Passageiros
-Visualização do fluxo de passageiros nas estações, incluindo número de pessoas presentes e horários específicos.
+Oferecer uma interface moderna, acessível e conectada às necessidades do usuário.
 
-Análise de fluxo para diferentes horários do dia, ajudando o usuário a escolher os melhores momentos para viajar.
+Nosso sistema promove planejamento de rota inteligente, interatividade, transparência nas informações e conectividade entre tecnologias.
 
-4. Mapa da Linha 9
-Mapa interativo com todas as estações da Linha 9, destacando a zona sul e o número de passageiros em cada estação.
+✅ Funcionalidades Implementadas
+1. 🔐 Login e Cadastro
+Acesso seguro com autenticação.
 
-Visão clara da distribuição do fluxo de passageiros nas estações da linha.
+Cadastro com nome, e-mail e senha.
 
-5. Sistema de Login e Cadastro
-Login com credenciais para acesso ao sistema.
+Dados enviados ao banco Oracle via API Java, com comunicação com módulo Python.
 
-Visualização e edição do perfil, incluindo alteração da foto de perfil.
+2. 🏠 Página Principal Pós-Login
+Após efetuar login, o usuário é redirecionado para a tela inicial do sistema, que contém:
 
-6. Avisos e Sugestões Interativas
-Página dedicada a notícias importantes sobre mudanças nas linhas.
+Apresentação dos integrantes do projeto;
 
-Formulário para envio de feedback e sugestões dos usuários.
+Botão "Saber Mais" com informações detalhadas das linhas disponíveis:
 
-7. Perfil do Usuário
-Exibição de informações pessoais: nome, e-mail e foto.
+Status operacional das Linhas 4, 8 e 9;
 
-Opção para alterar foto de perfil e fazer logout.
+Horário de funcionamento;
 
-🛠 Roadmap do Projeto
-Fase 1: Protótipos e Planejamento
+Formulário de feedback e reclamações.
 
-Criação de wireframes e mockups no Figma.
+3. 🚋 Linha 9 – Funcionalidades Principais
+Ao acessar a Linha 9, o usuário encontra:
 
-Definição da paleta de cores, tipografia e layout.
+▸ Iniciar Viagem
+Escolha da estação de origem e destino;
 
-Fase 2: Desenvolvimento da Estrutura Básica
+Cálculo de tempo estimado;
 
-Implementação inicial com HTML e CSS.
+Barra de progresso com percentual da viagem e tempo restante.
 
-Configuração da navegação e layout responsivo.
+🔧 Adendo técnico:
+Durante a integração do front (Vercel) com o back (Java), foi identificado um erro de CORS, causado pela diferença de domínios.
+Foi necessário configurar o back-end para aceitar origens externas, como o domínio do Vercel.
+Além disso, a API de Relatório depende dos dados gerados pela API de Viagem, tornando ambas interdependentes.
 
-Fase 3: Implementação com Next.js e TypeScript
+▸ Relatório de Viagens
+Histórico completo com estação de origem, destino, horário e duração.
 
-Migração para Next.js com TypeScript.
+▸ Mapa Interativo da Linha 9
+Visualização em tempo real das estações da linha;
 
-Desenvolvimento das funcionalidades principais: login, cadastro, viagens, relatórios e fluxo de passageiros.
+Destaque da zona sul e número de passageiros por estação.
 
-🛠 Tecnologias Utilizadas
-Next.js: Framework React para frontend.
+▸ Previsão de Horário de Pico
+Gráficos e dados mostrando os momentos de maior lotação em cada estação;
 
-TypeScript: Superset JavaScript para melhor escalabilidade.
+Ajuda no planejamento de viagens em horários estratégicos.
 
-React: Biblioteca para UI.
+▸ Estações Detalhadas – Exemplo: Pinheiros
+Ao selecionar a estação Pinheiros, o usuário acessa:
 
-localStorage: Armazenamento local para dados do usuário.
+Ícones com informações de acessibilidade, botão de denúncia rápida;
 
-📁 Estrutura de Pastas
-/src — Código-fonte principal
+Integração com o Chatbot interativo, que responde dúvidas frequentes sobre o sistema, rotas, horários e status das linhas.
 
-/pages — Páginas Next.js
+4. 💬 Chatbot Interativo
+Disponível nas estações e na página principal.
 
-/components — Componentes reutilizáveis
+Responde perguntas sobre:
 
-/public — Arquivos estáticos (imagens, ícones)
+Viagens;
 
-🛠️ Como Rodar o Projeto Localmente
+Status das linhas;
+
+Como utilizar o sistema;
+
+Problemas e reclamações.
+
+5. 📢 Avisos e Sugestões
+Página com atualizações e mudanças nas linhas.
+
+Formulário de envio de feedback, sugestões e reclamações.
+
+6. 👤 Perfil do Usuário
+Visualização de nome, e-mail e foto de perfil.
+
+Edição de imagem e opção de logout.
+
+🛠️ Roadmap do Projeto
+Fase 1: Planejamento
+Criação de protótipos no Figma;
+
+Definição visual (cores, tipografia, layout).
+
+Fase 2: Estrutura Inicial
+Desenvolvimento com HTML/CSS;
+
+Estruturação de páginas e componentes básicos.
+
+Fase 3: Integração e Stack Completa
+Migração para Next.js com TypeScript;
+
+Criação das APIs em Java;
+
+Integração com módulo Python;
+
+Banco de dados Oracle para persistência.
+
+🧰 Tecnologias Utilizadas
+Tecnologia	Função
+Next.js	Framework React para SPA e SSR
+TypeScript	Tipagem estática no front-end
+React	Criação de componentes de UI
+Java	Back-end e lógica de negócio (APIs REST)
+Python	Manipulação de dados e integração com Oracle
+Oracle DB	Armazenamento principal
+localStorage	Armazenamento local de sessão do usuário
+
+📁 Estrutura de Pastas (Frontend)
+bash
+Copiar
+Editar
+/src
+  /pages         → Páginas Next.js (login, home, viagem, etc.)
+  /components    → Componentes reutilizáveis (navbar, card, etc.)
+/public          → Imagens, ícones, arquivos estáticos
+▶️ Como Rodar o Projeto Localmente
 bash
 Copiar
 Editar
@@ -94,53 +150,97 @@ git clone https://github.com/ChallengeCCR1/Challenge-FrontEnd.git
 cd Challenge-FrontEnd
 npm install
 npm run dev
-Acesse a aplicação em: http://localhost:3000
+Acesse em: http://localhost:3000
+
+🔗 Principais APIs do Projeto
+API	Método	URL	Função
+API Viagem	POST	/api/viagem/iniciar	Inicia uma nova viagem. ⚠️ Requere correção de CORS para uso externo.
+API Relatório de Usuário	GET	/relatorio/usuario/{id}?usuario={nome}	Retorna o histórico de viagens.
+API Mapa da Linha 9	GET	/api/mapa/linha9	Fornece dados para o mapa interativo.
+API Previsão de Fluxo	GET	/api/previsao?estacao={nome}&horario={horario}	Retorna previsão de lotação por horário.
+API Status das Linhas Diamante	GET	/status-linhas/diamante	Retorna o status em tempo real das linhas.
+API Cadastro de Usuário	POST	/api/usuario/cadastrar	Cadastro de novos usuários.
+API Login de Usuário	POST	/api/usuario/login	Autentica usuário e inicia sessão.
 
 🎥 Vídeo de Apresentação
-Veja nosso vídeo de apresentação do projeto aqui.
+📽️ (Insira o link do vídeo aqui, se disponível)
 
-Exemplo de Uso
-Faça login no sistema com seu e-mail e senha.
+💡 Exemplo de Uso
+Acesse a página de login, insira e-mail e senha;
 
-Acesse a página Iniciar Viagem e selecione a estação de origem e destino.
+Ao logar, vá até a página principal e conheça os participantes e opções;
 
-O sistema calculará o tempo estimado de viagem e mostrará uma barra de progresso em tempo real.
+Explore as linhas disponíveis e veja o status operacional;
 
-Durante a viagem, acompanhe o tempo restante e o percentual concluído.
+Vá até a Linha 9 e selecione origem e destino;
 
-Ao final da viagem, uma mensagem de sucesso será exibida.
+Acompanhe a viagem com barra de progresso e tempo estimado;
 
-Consulte seu histórico de viagens na página de relatórios para revisar suas viagens anteriores.
+Consulte seu histórico na seção de relatórios;
 
-Visualize o mapa interativo da Linha 9 para planejar futuras viagens.
+Use o mapa interativo e verifique os horários de pico;
 
-Acesse os avisos e envie sugestões para melhorar o sistema.
+Interaja com o chatbot para tirar dúvidas;
 
-Principais APIs do Projeto
-API Viagem - Iniciar Viagem (POST)
-URL: http://localhost:8080/api/viagem/iniciar
-Inicia uma nova viagem, recebendo dados da estação de origem, destino e usuário, retornando o tempo estimado.
+Acesse a estação Pinheiros para ver recursos adicionais;
 
-API Relatório de Usuário (GET)
-URL: http://localhost:8080/relatorio/usuario/{id}?usuario={nome}
-Retorna o histórico detalhado de viagens do usuário, com origem, destino, tempo e horários.
+Envie sugestões ou denúncias no formulário interativo.
 
-API Mapa da Linha 9 (GET)
-URL: http://localhost:8080/api/mapa/linha9
-Fornece dados para o mapa interativo da Linha 9, mostrando estações e fluxo de passageiros.
 
-API Previsão (GET)
-URL: http://localhost:8080/api/previsao?estacao={nomeEstacao}&horario={horario}
-Retorna a previsão de fluxo de passageiros para uma estação e horário específicos.
 
-API Status das Linhas Diamante (GET)
-URL: http://localhost:8080/status-linhas/diamante
-Informa o status em tempo real das linhas Diamante, incluindo atrasos ou interrupções.
 
-API Cadastro de Usuário (POST)
-URL: http://localhost:8080/api/usuario/cadastrar
-Permite o cadastro de novos usuários com dados como nome, e-mail e senha.
 
-API Login de Usuário (POST)
-URL: http://localhost:8080/api/usuario/login
-Autentica usuários para acesso ao sistema validando credenciais"!
+Aplicação Java:
+
+Por questões de tempo, o grupo optou por não hospedar a API feita na linguagem
+Java (não é um recurso obrigatório da matéria de Domain Driven Design Using
+Java), e por isso, essa documentação serve como um passo a passo para
+colocar nossa aplicação no ar.
+
+Abra o repositório https://github.com/ChallengeCCR1/ChallengeJava 
+
+e clone onosso projeto.
+Você terá uma pasta escrita “ChallengeJava”.
+
+Basta abrir a pasta “future-station-challenge”, e basta adentrar os pacotes src ->
+main -> java -> br -> com -> fiap e pronto, aí estão todos os arquivos e classes
+do nosso projeto.
+
+Basta abrir esse projeto na sua IDE (de preferência o Intellij Ultimate). Se estiver
+tudo correto, basta clicar em:Caso não tenha essa opção, você deve seguir esses passos:
+No canto superior direito da sua IDE, clique na engrenagem, e logo em seguida
+em “Plugins”Ao acessar, você verá uma tela como essa:
+Selecione a opção “Marketplace”, e digite o nome do plugin “Quarkus Tools”Se você não tiver instalada, clique em “Install”.
+Pronto, agora basta reiniciar sua IDE e seu Plugin já estará instalado. Porém,
+ainda temos alguns passos:
+Para configurar o plugin, você deve clicar na seta para baixo, onde a marcação
+mostra:
+Abrirá uma tela parecida com essa:
+Clique em “Edit Configurations” para configurar o plugin.
+Logo em seguida, abrirá uma tela como a seguir, basta clicar no sinal de “+”, ou
+em “Add new run configuration”:Ao clicar, aparecerá uma tela assim:
+Basta rolar e procurar por “Quarkus”. Clique em “Apply” e em “OK”.Em seguida, especifique um nome para sua aplicação, selecione o projeto,
+aplique e confirme.
+
+Perceba que agora está configurado corretamente:Por fim, basta clicar em “Play”, ou no botão de rodar, como preferir chamar, e
+esperar a aplicação subir.
+Se tudo ocorrer bem, você deve ter algo assim no seu terminal:
+Pronto, a aplicação está no ar!Problemas funcionalidade de Viagem e Relatório
+Durante o planejamento do projeto, o grupo entrou em consenso de termos as
+seguintes funcionalidades:
+- Previsão de Pico (OK);
+- Viagem (Inativa);
+- Relatório (Inativa);
+- Mapa da Linha (OK);
+- Status Operacional (OK);
+Durante a confecção da Sprint4, nos deparamos com um erro de CORS na
+aplicação de viagem, no que implica diretamente na funcionalidade de relatório,
+pois sem uma viagem, não existe relatório. Acontece que contatamos os
+professores de Java e de Front, mas todas as propostas que nos deram foram
+falhas, e não tivemos sucesso. Por fim, é importante ressaltar que, em uma aula
+de Front o professor teve o mesmo problema, e não houve solução do mesmo
+erro de CORS. Preferimos documentar pois, ao fazermos testes no Postman, a
+API funciona normalmente, e insere no banco de dados (ao concluir uma
+viagem), e ‘puxa’ (ao consumir a API de relatório):Como podemos ver, a aplicação rodou normalmente, e inseriu no banco de
+dados. Nós entendemos que falhamos em não conseguir consertar, mas
+gostaríamos que ficasse evidente que não foi por falta de tentativas.
