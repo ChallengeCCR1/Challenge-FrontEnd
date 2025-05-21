@@ -181,7 +181,7 @@ Acesse em: http://localhost:3000
 
 Você pode acessar a aplicação hospedada na Vercel pelo link abaixo:
 
-🔗 **[Future Station - Acesse aqui](https://challengefrontend-1v4nf5ygq-challengeccr1s-projects.vercel.app/)**
+🔗 **[Future Station - Acesse aqui](https://challengefrontend-ten.vercel.app/)**
 
 > *Observação:* Caso a aplicação demore um pouco para carregar na primeira vez, é porque a Vercel pode estar "acordando" o projeto.
 
