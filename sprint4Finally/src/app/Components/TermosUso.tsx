@@ -1,6 +1,10 @@
 'use client'
 
+import { useRouter } from 'next/navigation'; 
+
 const TermosUso = () => {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-[#42807D] p-6 flex flex-col items-center">
       <div className="bg-[#fff] p-8 rounded-lg shadow-lg max-w-4xl w-full space-y-8">
@@ -48,11 +52,19 @@ const TermosUso = () => {
         <p className="text-lg text-gray-800">
           Este Termo será regido e interpretado de acordo com as leis de São Paulo. Qualquer disputa que surja em relação a estes Termos será resolvida exclusivamente pelos tribunais competentes da cidade de São Paulo, São Paulo.
         </p>
-
+     
         <h2 className="text-2xl font-semibold text-[#42807D]">Disposições Gerais</h2>
         <p className="text-lg text-gray-800">
           Se qualquer disposição destes Termos for considerada inválida ou inaplicável, as disposições restantes permanecerão em pleno vigor. A falha da FutureStation em exercer qualquer direito ou disposição destes Termos não constituirá renúncia a esse direito.
         </p>
+     <div className="flex justify-center mt-10">
+        <button
+          onClick={() => router.push('/Cadastro')}
+          className="bg-[#42807D] text-white px-8 py-3 rounded-[9px] text-xl hover:bg-[#365d56] transition-all duration-300"
+        >
+          Voltar
+        </button>
+      </div>
       </div>
     </div>
   );

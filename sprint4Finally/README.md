@@ -152,95 +152,142 @@ npm install
 npm run dev
 Acesse em: http://localhost:3000
 
-🔗 Principais APIs do Projeto
-API	Método	URL	Função
-API Viagem	POST	/api/viagem/iniciar	Inicia uma nova viagem. ⚠️ Requere correção de CORS para uso externo.
-API Relatório de Usuário	GET	/relatorio/usuario/{id}?usuario={nome}	Retorna o histórico de viagens.
-API Mapa da Linha 9	GET	/api/mapa/linha9	Fornece dados para o mapa interativo.
-API Previsão de Fluxo	GET	/api/previsao?estacao={nome}&horario={horario}	Retorna previsão de lotação por horário.
-API Status das Linhas Diamante	GET	/status-linhas/diamante	Retorna o status em tempo real das linhas.
-API Cadastro de Usuário	POST	/api/usuario/cadastrar	Cadastro de novos usuários.
-API Login de Usuário	POST	/api/usuario/login	Autentica usuário e inicia sessão.
-
-🎥 Vídeo de Apresentação
-📽️ (Insira o link do vídeo aqui, se disponível)
-
-💡 Exemplo de Uso
-Acesse a página de login, insira e-mail e senha;
-
-Ao logar, vá até a página principal e conheça os participantes e opções;
-
-Explore as linhas disponíveis e veja o status operacional;
-
-Vá até a Linha 9 e selecione origem e destino;
-
-Acompanhe a viagem com barra de progresso e tempo estimado;
-
-Consulte seu histórico na seção de relatórios;
-
-Use o mapa interativo e verifique os horários de pico;
-
-Interaja com o chatbot para tirar dúvidas;
-
-Acesse a estação Pinheiros para ver recursos adicionais;
-
-Envie sugestões ou denúncias no formulário interativo.
 
 
+# 🔗 Principais APIs do Projeto
+
+| **API**                               | **Método** | **URL**                                             | **Função**                                               |
+|---------------------------------------|------------|-----------------------------------------------------|----------------------------------------------------------|
+| **API Viagem**                        | `POST`     | `/api/viagem/iniciar`                               | Inicia uma nova viagem. ⚠️ *Requere correção de CORS para uso externo.* |
+| **API Relatório de Usuário**          | `GET`      | `/relatorio/usuario/{id}?usuario={nome}`            | Retorna o histórico de viagens.                          |
+| **API Mapa da Linha 9**               | `GET`      | `/api/mapa/linha9`                                  | Fornece dados para o mapa interativo.                    |
+| **API Previsão de Fluxo**             | `GET`      | `/api/previsao?estacao={nome}&horario={horario}`     | Retorna previsão de lotação por horário.                 |
+| **API Status das Linhas Diamante**    | `GET`      | `/status-linhas/diamante`                           | Retorna o status em tempo real das linhas.               |
+| **API Cadastro de Usuário**           | `POST`     | `/api/usuario/cadastrar`                            | Cadastro de novos usuários.                              |
+| **API Login de Usuário**              | `POST`     | `/api/usuario/login`                                | Autentica usuário e inicia sessão.                       |
+
+---
+
+## 🎥 **Vídeo de Apresentação**
+
+📽️ *(Insira o link do vídeo aqui, se disponível)*
+
+---
+
+## 💡 **Exemplo de Uso**
+
+1. **Acesso à página de login**:  
+   Acesse a página de login e insira seu **e-mail** e **senha**.
+
+2. **Página principal**:  
+   Após o login, navegue até a página principal para conhecer os **participantes** e as opções disponíveis.
+
+3. **Exploração das Linhas**:  
+   Veja o **status operacional** das linhas e explore as **linhas disponíveis**.
+
+4. **Linha 9 - Origem e Destino**:  
+   Selecione a **origem** e **destino** na **Linha 9** para planejar sua viagem.
+
+5. **Acompanhamento de Viagem**:  
+   Durante a viagem, visualize a **barra de progresso** e o **tempo estimado** para chegada.
+
+6. **Consulta de Relatórios**:  
+   Consulte seu **histórico de viagens** na seção de relatórios.
+
+7. **Mapa Interativo**:  
+   Explore o **mapa interativo** e consulte os horários de **pico**.
+
+8. **Chatbot**:  
+   Interaja com o **chatbot** para tirar dúvidas sobre o sistema.
+
+9. **Recursos Adicionais - Estação Pinheiros**:  
+   Acesse a **estação Pinheiros** para ver recursos adicionais do sistema.
+
+10. **Formulário de Sugestões ou Denúncias**:  
+    Envie **sugestões** ou **denúncias** através do **formulário interativo**.
+
+---
 
 
 
-Aplicação Java:
+Documentação para Colocar a Aplicação Java no Ar
+Objetivo: Este documento tem como objetivo fornecer um passo a passo para colocar a aplicação Java do projeto Future Station Challenge no ar, caso alguém precise hospedar a API que foi construída utilizando Java, mas que, por questões de tempo, não foi hospedada pela equipe.
 
-Por questões de tempo, o grupo optou por não hospedar a API feita na linguagem
-Java (não é um recurso obrigatório da matéria de Domain Driven Design Using
-Java), e por isso, essa documentação serve como um passo a passo para
-colocar nossa aplicação no ar.
+Passos para Colocar a Aplicação no Ar
+1. Clonando o Repositório
+Acesse o repositório do projeto:
 
-Abra o repositório https://github.com/ChallengeCCR1/ChallengeJava 
+Repositório ChallengeJava
 
-e clone onosso projeto.
-Você terá uma pasta escrita “ChallengeJava”.
+Clone o repositório para o seu ambiente local.
 
-Basta abrir a pasta “future-station-challenge”, e basta adentrar os pacotes src ->
-main -> java -> br -> com -> fiap e pronto, aí estão todos os arquivos e classes
-do nosso projeto.
+Você terá uma pasta chamada ChallengeJava no seu diretório local.
 
-Basta abrir esse projeto na sua IDE (de preferência o Intellij Ultimate). Se estiver
-tudo correto, basta clicar em:Caso não tenha essa opção, você deve seguir esses passos:
-No canto superior direito da sua IDE, clique na engrenagem, e logo em seguida
-em “Plugins”Ao acessar, você verá uma tela como essa:
-Selecione a opção “Marketplace”, e digite o nome do plugin “Quarkus Tools”Se você não tiver instalada, clique em “Install”.
-Pronto, agora basta reiniciar sua IDE e seu Plugin já estará instalado. Porém,
-ainda temos alguns passos:
-Para configurar o plugin, você deve clicar na seta para baixo, onde a marcação
-mostra:
-Abrirá uma tela parecida com essa:
-Clique em “Edit Configurations” para configurar o plugin.
-Logo em seguida, abrirá uma tela como a seguir, basta clicar no sinal de “+”, ou
-em “Add new run configuration”:Ao clicar, aparecerá uma tela assim:
-Basta rolar e procurar por “Quarkus”. Clique em “Apply” e em “OK”.Em seguida, especifique um nome para sua aplicação, selecione o projeto,
-aplique e confirme.
+2. Abrindo o Projeto na IDE
+Dentro da pasta clonada, navegue até:
+src -> main -> java -> br -> com -> fiap
+Aqui estarão todos os arquivos e classes do nosso projeto.
 
-Perceba que agora está configurado corretamente:Por fim, basta clicar em “Play”, ou no botão de rodar, como preferir chamar, e
-esperar a aplicação subir.
-Se tudo ocorrer bem, você deve ter algo assim no seu terminal:
-Pronto, a aplicação está no ar!Problemas funcionalidade de Viagem e Relatório
-Durante o planejamento do projeto, o grupo entrou em consenso de termos as
-seguintes funcionalidades:
-- Previsão de Pico (OK);
-- Viagem (Inativa);
-- Relatório (Inativa);
-- Mapa da Linha (OK);
-- Status Operacional (OK);
-Durante a confecção da Sprint4, nos deparamos com um erro de CORS na
-aplicação de viagem, no que implica diretamente na funcionalidade de relatório,
-pois sem uma viagem, não existe relatório. Acontece que contatamos os
-professores de Java e de Front, mas todas as propostas que nos deram foram
-falhas, e não tivemos sucesso. Por fim, é importante ressaltar que, em uma aula
-de Front o professor teve o mesmo problema, e não houve solução do mesmo
-erro de CORS. Preferimos documentar pois, ao fazermos testes no Postman, a
-API funciona normalmente, e insere no banco de dados (ao concluir uma
-viagem), e ‘puxa’ (ao consumir a API de relatório):Como podemos ver, a aplicação rodou normalmente, e inseriu no banco de
-dados. Nós entendemos que falhamos em não conseguir consertar, mas
-gostaríamos que ficasse evidente que não foi por falta de tentativas.
+Abra o projeto na sua IDE de preferência (recomendamos o IntelliJ IDEA Ultimate).
+
+3. Configuração do Quarkus Tools Plugin
+Caso você não tenha o plugin do Quarkus instalado na sua IDE, siga os seguintes passos:
+
+No canto superior direito da sua IDE, clique na engrenagem e selecione Plugins.
+
+Na tela de plugins, selecione a opção Marketplace e digite "Quarkus Tools" na barra de pesquisa.
+
+Se você não tiver o plugin instalado, clique em Install.
+
+Após a instalação, reinicie sua IDE.
+
+4. Configurando o Plugin Quarkus
+Após reiniciar a IDE, siga os passos abaixo para configurar o Quarkus:
+
+Clique na seta para baixo no canto superior direito da IDE, onde aparece a opção Run Configurations.
+
+Na tela que abrir, clique em Edit Configurations.
+
+Na janela de configurações, clique no ícone + para adicionar uma nova configuração.
+
+Selecione a opção Quarkus na lista de configurações.
+
+Clique em Apply e depois em OK para salvar.
+
+Agora, o Quarkus está corretamente configurado.
+
+5. Rodando a Aplicação
+Com a configuração pronta, basta clicar no botão Play ou Run na IDE para iniciar a aplicação.
+
+Se tudo estiver correto, você verá algo semelhante a isso no terminal:
+
+scss
+Copiar
+Editar
+Quarkus started in XXs. (Running)
+Isso indica que a aplicação foi iniciada com sucesso.
+
+Problemas de Funcionalidade de Viagem e Relatório
+Durante a Sprint 4, nos deparamos com um erro de CORS nas funcionalidades de Viagem e Relatório. Esse problema tem impacto direto no funcionamento dessas funcionalidades, pois sem uma viagem registrada, não é possível gerar um relatório.
+
+Contexto do Erro de CORS
+CORS (Cross-Origin Resource Sharing) é um mecanismo de segurança que impede que páginas da web façam requisições a servidores de domínios diferentes.
+
+No nosso caso, durante os testes no Postman, a API funcionou corretamente, realizando a inserção de dados no banco de dados ao concluir uma viagem e recuperando os dados corretamente ao consultar o relatório.
+
+Tentativas de Solução
+Durante o processo, tentamos diversas soluções para resolver o erro de CORS:
+
+Contato com os Professores: Buscamos auxílio com os professores de Java e Frontend, mas, apesar das tentativas, não conseguimos resolver o problema.
+
+Tentativas de Implementação: Várias abordagens foram testadas para contornar o erro de CORS, mas nenhuma delas teve sucesso.
+
+Conclusão
+Embora a aplicação funcione corretamente quando testada via Postman, o erro de CORS impediu que as funcionalidades de Viagem e Relatório funcionassem como esperado na interface. Gostaríamos de enfatizar que, apesar das tentativas de resolução, o problema de CORS não foi solucionado. No entanto, a API está funcional e interage corretamente com o banco de dados.
+
+Nota: A solução para o problema de CORS pode depender de configurações específicas no servidor backend ou na aplicação frontend, e por isso, recomendamos uma revisão adicional dessas configurações.
+
+Considerações Finais
+A API foi configurada corretamente e está em funcionamento, com exceção da funcionalidade de Viagem e Relatório, que estão inativas devido ao erro de CORS.
+
+Continuaremos trabalhando para corrigir esse erro, mas por enquanto, a aplicação de Previsão de Pico, Mapa da Linha e Status Operacional estão operacionais.
